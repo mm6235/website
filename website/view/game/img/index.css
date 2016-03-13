@@ -1,0 +1,192 @@
+@charset "utf-8";
+/*全局样式*/
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{padding: 0;margin: 0;}
+/*html5*/
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+html{position:relative;font-size: 14px;font-weight: normal;color: #666;font-family:'Microsoft YaHei', '微软雅黑', helvetica, arial, sans-serif;}
+a{color:#2F3B49;}
+a,a:hover,a:link,a:visited{text-decoration: none;} 
+ul li{list-style: none;}
+img{border: 0;}
+
+html{width: 100%;height: 100%; margin: 0; overflow: hidden;}
+body{width: 100%;height: 100%; margin: 0; overflow: hidden;}
+	/*转场*/
+	.gz-compressive>.title{ width: 13.8rem; margin: 2.5rem 0 3rem 2.2rem;position: relative;}
+	.gz-compressive .title>.slogan{width: 8rem;display:block;position: relative; -webkit-animation: gzright .5s;	-o-animation: gzright .5s;	animation: gzright .5s;}
+	.gz-compressive .title>.slogan.genre{position: absolute;right: 0;margin-top: 5px;}
+	.gz-compressive .title>.slogan img{width: 100%;display: inline-block;}
+	.gz-tbg{width: 91px;height: 452px;position: absolute;top: 10px; right:0; z-index: 2; -webkit-animation: gzleft .5s;	-o-animation: gzleft .5s;	animation: gzleft .5s;}
+	.gz-tbg>img{width:100%;display: inline-block;}
+
+	.gz-con{margin:58px 20px; padding: 5px 0 2.8rem; position: relative; z-index: 3; background: url(zhuangchang_03.png) no-repeat;background-size: 100%;-webkit-animation: gzshowup .5s;	-o-animation: gzshowup .5s;	animation: gzshowup .5s;}
+	.gz-con .title{width: 6rem; margin:0;position: relative;left: 35%;}
+	.gz-con .title>img{width:100%;display: inline-block;}
+
+	.gz-con .vision{width:100%; display: inline-block; margin: 3rem 0 2rem; text-align: center;}
+	.gz-con .vision>img{width:7rem;}	
+
+	.gz-con .explain{width:80%;margin: 10px auto;font-size: 1.3rem;}
+	.gz-con .example{width:10rem; margin: 3.3rem auto;}
+	.gz-con .example>img{width:100%;display: inline-block;}
+	.gz-con .statenow{width: 10rem;height:52px; display: block;margin: 0 auto; position: relative;bottom: 0; background: url(lijitiaozhan.png) no-repeat;background-size: 100%;}
+
+	.gz-con .meterset{width:100%; display: inline-block; margin: 2rem 0; text-align: center;}
+	.gz-con .meterset>img{width:18rem;}
+
+	/*转场结束*/
+
+	/*最强鹰眼*/
+	.m-turncircle{width: 100%; height:18rem;position: relative; margin-top: 1rem; padding-bottom: 2rem; background: url(gq-01.png) no-repeat;background-size: 100%; -webkit-animation: scaling .5s;	-o-animation: scaling .5s;	animation: scaling .5s;-webkit-transform: scale(1);-o-transform: scale(1);transform: scale(1);}
+	.m-turncircle>img{width: 5rem; display: inline-block; position: absolute;top: 23.5%;left: 30%;}
+
+	.m-direction{height: 12rem; margin: 0 26px 3rem; position: relative;-webkit-animation: gzshowup .5s; -o-animation: gzshowup .5s; animation: gzshowup .5s;}	
+	.m-direction>ul li{width: 100px;height: 50px;display: inline-block; position: relative; cursor: pointer; background: url(fangxiang.png) no-repeat; background-size: 100%;}
+	.m-direction>ul li.cen{position: absolute; top: 35%;}
+	.m-direction>ul li.foot{position: absolute; bottom:0;}	
+  	.m-direction>ul li.btn{left: 0;}
+  	.m-direction>ul li.btn1{background-position-y:-50px; }
+	.m-direction>ul li.btn2{background-position-y:-102px; }
+	.m-direction>ul li.btn3{background-position-y:-152px; }
+	.m-direction>ul li.btn4{right: 0; background-position-y:-203px; }
+	.m-direction>ul li.btn5{right: 0; background-position-y:-254px; }
+	.m-direction>ul li.btn6{left: 34%; background-position-y:-305px; }
+	.m-direction>ul li.btn7{left: 0; background-position-y:-356px; } 
+	.turncircle{-webkit-animation: rotation .5s linear;  -o-animation: rotation .5s linear;	animation: rotation .5s linear;	}
+	@-webkit-keyframes rotation{
+		0%{-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
+		50%{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg)transform:rotate(180deg)}
+		100%{-webkit-transform:rotate(360deg);-o-transform:rotate(360deg)transform:rotate(360deg)}}
+	@-o-keyframes rotation{
+		0%{-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
+		50%{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg)transform:rotate(180deg)}
+		100%{-webkit-transform:rotate(360deg);-o-transform:rotate(360deg)transform:rotate(360deg)}}
+	@keyframes rotation{
+		0%{-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
+		50%{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg)transform:rotate(180deg)}
+		100%{-webkit-transform:rotate(360deg);-o-transform:rotate(360deg)transform:rotate(360deg)}}
+	/*最强鹰眼结束*/
+
+	/*  心理抗压  */
+	.pg-item{display: none; width: 100%;max-width: 640px;height: 100%; overflow: hidden; position: relative; margin: 0 auto; background: url(gq_02.jpg)no-repeat;background-size: 100%;}
+	.pg-main .active{display: block;}
+
+	.m-alarmclock{width: 14.5rem; height:3.5rem; position: relative;top:0;left: 4.8rem;margin-top: 5px;-webkit-animation: alarmtop .5s;	-o-animation: alarmtop .5s;	animation: alarmtop .5s;}
+	.m-alarmclock>img{width:100%;}
+	.m-alarmclock .timer{width: 100%;position: absolute; top: 2.3rem; left: 2rem; text-align: center;font-size: 1.8rem;color: #df1919;}
+	
+	.m-content{width: 100%; height:10rem;padding-top:9rem; background: url(xlky_bg.png) no-repeat;background-size: 100%; -webkit-animation: scaling .5s;	-o-animation: scaling .5s;	animation: scaling .5s;-webkit-transform: scale(1);-o-transform: scale(1);transform: scale(1);}
+	.m-content .formula{width: 100%;position: relative;right: 10px; text-align: center;font-size: 2rem;color: #fff;}
+	.m-content .formula .exprs{}
+	.m-answerbtn{width: 100%;margin-top: 5px; position: relative; padding-bottom: 1.5rem; text-align: center; -webkit-animation: gzshowup .5s;
+	-o-animation: gzshowup .5s ;
+	animation: gzshowup .5s ;}
+	.m-answerbtn .btn{display: block;width: 15rem;height:2.6rem; position: relative; margin:0 auto 1rem;padding-top: 5px; font-size: 1.6rem;color: #df1919; background: url(xlky_bt.png)no-repeat;background-size: 100%;}
+	.m-answerbtn .btn>.gap{position: relative;bottom: 3px;margin: 0 2rem;}
+	.m-answerbtn .btn:active{top: 1px;}
+	.m-answerbtn .btn1{background-position-y:-43px; }
+	.m-answerbtn .btn2{background-position:0 bottom;}
+	/*  心理抗压结束  */	
+	/*顶部显示动画*/
+	@-webkit-keyframes  alarmtop{
+		0%{top: -100%;}
+		100%{top: 0%;}}
+	@-o-keyframes alarmtop{0%{
+		top: -100%;}
+		100%{top: 0%;}}
+	@keyframes alarmtop{
+		0%{top: -100%;}
+		100%{top: 0%;}}
+	/*缩放显示动画*/
+	@-webkit-keyframes  scaling {
+		0%{-webkit-transform: scale(0);-o-transform: scale(0);transform: scale(0);}
+		100%{-webkit-transform: scale(1);-o-transform: scale(1);transform: scale(1);}}
+	@-o-keyframes scaling{
+		0%{-webkit-transform: scale(0);-o-transform: scale(0);transform: scale(0);}
+		100%{-webkit-transform: scale(1);-o-transform: scale(1);transform: scale(1);}}
+	@keyframes scaling{
+		0%{-webkit-transform: scale(0);-o-transform: scale(0);transform: scale(0);}
+		100%{-webkit-transform: scale(1);-o-transform: scale(1);transform: scale(1);}}
+	/*底部显示动画*/
+	@-webkit-keyframes gzshowup{ 
+		0%{top: 100%;}
+		100%{top: 0%;}
+	}
+	@-o-keyframes gzshowup{
+		0%{top: 100%;}
+		100%{top: 0%;}
+	}
+	@keyframes gzshowup{
+		0%{top: 100%;}
+		100%{top: 0%;}
+	}
+	/* 左边显示动画 */
+	@-webkit-keyframes gzright{
+		0%{right: 100%;}
+		100%{right: 0%;}
+	}
+	@-o-keyframes gzright{
+		0%{right: 100%;}
+		100%{right: 0%;}
+	}
+	@keyframes gzright{
+		0%{right: 100%;}
+		100%{right: 0%;}
+	}
+	/* 右边显示动画 */
+	@-webkit-keyframes gzleft{
+		0%{right: -100%;}
+		100%{right: 0%;}
+	}
+	@-o-keyframes gzleft{
+		0%{right: -100%;}
+		100%{right: 0%;}
+	}
+	@keyframes gzleft{
+		0%{right: -100%;}
+		100%{right: 0%;}
+	}
+	
+	/*  分配力测试  */
+	.m-flystate{ width: 100%;height: 18.2rem; margin: 2rem auto 0;position: relative; background: url(gplcs_bg.png) no-repeat;background-size: 100%;  -webkit-animation: scalespin .5s;	-o-animation: scalespin .5s;	animation: scalespin .5s;}
+	.m-flystate .meter{ width: 42px;height: 7rem; position: absolute; bottom: 51px; padding-top: 2.5rem; overflow: hidden; font-size: 12px; color: #fff;}
+	/*.m-flystate .meter>img{width: 8px; -webkit-transition: all 3s;	-o-transition: all 5s;	transition: all 3s;}*/
+	/*.m-flystate .sudu>img{ position: absolute;right: 1px;}*/
+	/*.m-flystate .gaodu>img{margin-left: 2px;}*/
+	
+	.m-flystate .meter>img{width: 92%; position: absolute;top: 53%;}
+	.m-flystate .meter>div{width: 100%; overflow: hidden;}
+	.m-flystate .meterva{position: relative;-webkit-transition: all 2s;	-o-transition: all 2s;	transition: all 2s;}
+	.m-flystate .meterva>li{line-height: 12px; text-align: center; -webkit-transform:scale(0.8);}
+	.m-flystate .sudu{left: 6.5rem; background: url(fpxs_02.png) no-repeat;background-size: 100%;}
+	.m-flystate .gaodu{right: 7.2rem; background: url(fpxs_03.png) no-repeat;background-size: 100%;}
+	.m-flystate .gaodu>img{right: 0;}
+	.m-flystate .leveldu{width: 5.5rem;height: 5.8rem; position: absolute; top: 6.8rem;left: 9.8rem; background: url(fpxs01.png) no-repeat;background-size: 100%;}
+	.m-flystate .leveldu>img{width: 90%;display: inline-block;position: absolute;top:0;left: 6px;-webkit-transition: all 3s; -o-transition: all 3s; transition: all 3s;}
+	.m-fpltest{margin-bottom: 1.8rem;position: relative;}
+	.m-fpltest .btn{display: block;width: 18rem;height:3.5rem; position: relative; margin:0 auto 1rem;color: #df1919; background: url(fplcs_bt.png)no-repeat;background-size: 100%; -webkit-animation: gzright .5s;	-o-animation: gzright .5s; animation: gzright .5s;}
+	.m-fpltest .btn:active{top: 1px;}
+	.m-fpltest .btn1{background-position-y:-55px; -webkit-animation: gzleft .5s; -o-animation: gzleft .5s; animation: gzleft .5s;}
+	.m-fpltest .btn2{background-position-y:bottom; }
+	/*分配力仪表显示动画*/
+	@-webkit-keyframes  scalespin {
+		0%{-webkit-transform: scale(0);-o-transform: scale(0);transform: scale(0);opacity: 0;}
+		100%{-webkit-transform: scale(1);-o-transform: scale(1);transform: scale(1);opacity: 1;}}
+	@-o-keyframes  scalespin {
+		0%{-webkit-transform: scale(0);-o-transform: scale(0);transform: scale(0);opacity: 0;}
+		100%{-webkit-transform: scale(1);-o-transform: scale(1);transform: scale(1);opacity: 1;}}
+	@keyframes  scalespin {
+		0%{-webkit-transform: scale(0);-o-transform: scale(0);transform: scale(0);opacity: 0;}
+		100%{-webkit-transform: scale(1);-o-transform: scale(1);transform: scale(1);opacity: 1;}}
+
+
+
+
+
+
+
+
+
+
+
+

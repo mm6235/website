@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello Sea.js</title>
+</head>
+<body>
+<iframe width='738' height='523' class='preview-iframe' scrolling='no' frameborder='0' src='http://download.csdn.net/source/preview/7237675/7f9dafc82aaaa77b5f3a4916fec4ae7c' ></iframe>
+<div id="container">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKb32QfE.png" width="44" height="44" alt="H">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKb2rJHI.png" width="44" height="44" alt="e">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKeZrUpg.png" width="44" height="44" alt="l">
+  <img src="https://i.alipayobjects.com/e/201211/1cqM4u3Ejk.png" width="44" height="44" alt="l">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKoKV2Sa.png" width="44" height="44" alt="o">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKb4JU4K.png" width="44" height="44" alt=",">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKojFDLY.png" width="44" height="44" alt="S">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKb2sBO8.png" width="44" height="44" alt="e">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKb2LmXk.png" width="44" height="44" alt="a">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKb1jcWC.png" width="44" height="44" alt="J">
+  <img src="https://i.alipayobjects.com/e/201211/1cqKojb72y.png" width="44" height="44" alt="S">
+</div>
+
+<script src="../js/seajs/sea.js"></script>
+<script>
+
+  // Set configuration
+  seajs.config({
+    base: "./js/seajs/",
+    alias: {
+      "jquery": "http://libs.baidu.com/jquery/1.9.1/jquery.min.js"
+    }
+  });
+
+  // For development
+  if (location.href.indexOf("?dev") > 0) {
+    seajs.use("./static/hello/src/main");
+  }else{// For production
+    seajs.use("../js/main");
+  }
+  
+</script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

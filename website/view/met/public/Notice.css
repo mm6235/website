@@ -1,0 +1,33 @@
+﻿/* 焦点图 底部样式 */
+#page_bottom {
+    color: #D9D9D9;
+    background-color: #232A34;
+}
+
+    #page_bottom table {
+        width: 100%;
+    }
+
+        #page_bottom table td {
+            vertical-align: middle;
+            height: 115px;
+        }
+
+            #page_bottom table td p {
+                color: #D9D9D9;
+                padding-bottom: 10px;
+            }
+
+            #page_bottom table td div.info {
+                padding-right: 25px;
+            }
+
+            #page_bottom table td a.abtn {
+                color: #333;
+                background-color: #FFD300;
+                margin-top: 10px;
+            }
+
+            #page_bottom table td h4 {
+                line-height: 25px;
+            }
