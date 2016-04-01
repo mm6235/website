@@ -1,0 +1,70 @@
+<!--
+	作者：914230482@qq.com
+	时间：2015-12-28
+	描述：游戏结束
+-->
+<div class="m-gameover">
+	<div class="textbox">
+		<div class="header"><img src="src/images/touxiang.png"/></div>
+		<div class="pingfen">
+			<p class="p1">经过拖把儿分析</p>
+			<p class="p2">您是《miss pilot》的手镯晴</p>
+			<ul class="games-tongji" id="games-statistics">
+				<li>鹰眼：</li>
+				<li>心理：</li>
+				<li>分配力：</li>
+			</ul>
+			<!--<ul>
+				<li><span class="text">鹰眼指数：</span><span class="img"><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/></span></li>
+				<li><span class="text">心理指数：</span><span class="img"><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/></span></li>
+				<li><span class="text">分配力指数：</span><span class="img"><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/><img src="src/images/icon-xin2.png"/></span></li>
+			</ul>-->
+			<div class="hr"></div>
+			<blockquote>
+				你像小田千里一样凡事讲求精确无比，遇事能够妥善处置自己的情绪。在学飞过程中，没准能遇到自己志同道合的好友兼竞争对手，在竞争中愈发成为一个优秀的飞行员。
+			</blockquote>
+		</div>
+	</div>
+	<div class="repert" id="games-zlyc"><img src="src/images/zailaiyici.png" /></div>
+	<ul class="btns">
+		<li id="games-follow"><img src="src/images/fenxiangyixia.png"/></li>
+		<li id="games-fxty"><img src="src/images/fxty.png"/></li>
+	</ul>
+</div>
+<div class="m-games-followbox" id="games-followbox"></div>
+<script type="text/javascript">
+	seajs.use('TGM',function(TGM){
+		console.log('进入游戏结束页面');
+		$('#games-follow').on('click',function(){
+			$('#games-followbox').show();
+		});
+		$('#games-followbox').on('click',function(){
+			$(this).hide();
+		});
+		// 输出统计分数
+		$('#games-statistics li').eq(0).html('鹰眼：全部'+TGM.statistics.leveldata[1].allAnswer+' 正确：'+TGM.statistics.leveldata[1].correctAnswer + ' 错误：'+TGM.statistics.leveldata[1].errorAnswer);
+		$('#games-statistics li').eq(1).html('心理：全部'+TGM.statistics.leveldata[2].allAnswer+' 正确：'+TGM.statistics.leveldata[2].correctAnswer + ' 错误：'+TGM.statistics.leveldata[2].errorAnswer);
+		$('#games-statistics li').eq(2).html('分配力测试：全部'+TGM.statistics.leveldata[3].allAnswer+' 正确：'+TGM.statistics.leveldata[3].correctAnswer + ' 错误：'+TGM.statistics.leveldata[3].errorAnswer);
+		TGM.statistics.fraction = TGM.statistics.leveldata[1].fraction + TGM.statistics.leveldata[2].fraction + TGM.statistics.leveldata[3].fraction;
+		// 提交数据
+		$.ajax({
+			type:"get",
+			url:"index.html",
+			data : TGM.statistics,
+			success : function(){
+				console.log('提交数据成功');
+			}
+		});
+		// 点击飞行体验
+		$('#games-fxty').on('click',function(){
+			$.ajax({
+				type:"get",
+				url:"index.html",
+				data : TGM.statistics,
+				success : function(){
+					console.log('点击飞行体验');
+				}
+			});
+		});
+	});
+</script>

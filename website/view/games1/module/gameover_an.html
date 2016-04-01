@@ -1,0 +1,146 @@
+<style type="text/css">
+html,body{/*  overflow: visible;  */ background: url(src/img/jgbg_01.jpg); background-size: cover; }
+</style>
+
+<div class="m-gameover">
+	<div class="textbox">
+		<div class="title">您的排名<span>3</span></div>
+		<div class="pingfen">
+			<div class="header"><img src="src/images/touxiang.png"/></div>
+			<div class="xinxi qlz">您的潜力值为</div>
+			<div class="xinxi">
+				<div class="loading">
+					<p></p>
+				</div>
+				<div class="number"><em>80</em>分</div>
+			</div>
+			<div class="xinxi note"><img src="src/img/note_01.png" alt=""></div>
+		</div>
+		<div class="share">
+			<a id="games-zlyc" href="javascript:void(0);"><img src="src/img/zaiwanyici.png"/></a>
+			<a id="games-follow" href="javascript:void(0);"><img src="src/img/feixinagyixia.png"/></a>
+		</div>
+		<a class="hitsta" href="javascript:void(0);"><img src="src/img/games_12.png" alt=""></a>
+	</div>
+	<div class="m-leaderboard" id="game-leaderboard">
+		<div class="header"><img src="src/img/games_13.png" alt=""></div>
+		<ul>
+			<li class="list">
+				<div class="rank"></div>
+				<div class="name">
+					<img src="src/images/touxiang.png" alt="">
+					<span>剑魔心雨</span>
+				</div>
+				<div class="score">
+					<span>90</span>分
+				</div>
+			</li>
+			<li class="list">
+				<div class="rank"></div>
+				<div class="name">
+					<img src="src/images/touxiang.png" alt="">
+					<span>剑魔心雨</span>
+				</div>
+				<div class="score">
+					<span>90</span>分
+				</div>
+			</li>
+			<li class="list">
+				<div class="rank"></div>
+				<div class="name">
+					<img src="src/images/touxiang.png" alt="">
+					<span>剑魔心雨</span>
+				</div>
+				<div class="score">
+					<span>90</span>分
+				</div>
+			</li>
+			<li class="list">
+				<div class="rank"></div>
+				<div class="name">
+					<img src="src/images/touxiang.png" alt="">
+					<span>剑魔心雨</span>
+				</div>
+				<div class="score">
+					<span>90</span>分
+				</div>
+			</li>
+			<li class="list">
+				<div class="rank"></div>
+				<div class="name">
+					<img src="src/images/touxiang.png" alt="">
+					<span>剑魔心雨</span>
+				</div>
+				<div class="score">
+					<span>90</span>分
+				</div>
+			</li>
+			<li class="list">
+				<div class="rank"></div>
+				<div class="name">
+					<img src="src/images/touxiang.png" alt="">
+					<span>剑魔心雨</span>
+				</div>
+				<div class="score">
+					<span>90</span>分
+				</div>
+			</li>
+			<li class="list">
+				<div class="rank"></div>
+				<div class="name">
+					<img src="src/images/touxiang.png" alt="">
+					<span>剑魔心雨</span>
+				</div>
+				<div class="score">
+					<span>90</span>分
+				</div>
+			</li>
+		</ul>
+		<div class="footer"><a href="#morepaihb"><img src="src/img/games_15.png" alt=""></a></div>
+	</div>
+</div>
+<div class="m-games-followbox" id="games-followbox"></div>
+<script type="text/javascript">
+	seajs.use('TGM',function(TGM){
+		$('#games-follow').on('click',function(){
+			$('#games-followbox').show();
+		});
+		$('#games-followbox').on('click',function(){
+			$(this).hide();
+		});
+		$("body").on("touchstart", function(e) {
+		    e.preventDefault();
+		    startY = e.originalEvent.changedTouches[0].pageY;
+		});
+
+		$('body').on('touchmove',function(e){
+			e.preventDefault();
+		    moveEndY = e.originalEvent.changedTouches[0].pageY,
+		    Y = moveEndY - startY;
+	     	if ( Y > 10) {
+	     		console.log('top'+2+'bottom');
+		    }
+		    else if ( Y < -10 ) {
+	     		console.log('bottom'+2+'top');
+		    };
+		});
+
+		function leaderboard(list){
+			var list = list;
+			var Kab = ['No.1','No.2','No.3'],mingci;
+			for (var i = 0; i < list.length; i++) {
+				mingci = '第<span>'+(i+1)+'</span>名';
+				list.eq(i).find('.rank').html(mingci);	
+			};
+			for (var i = 0; i < 3; i++) {
+				list.eq(i).addClass('kab');		 
+				list.eq(i).find('.rank').text(Kab[i]);		 
+			};
+		
+		}
+		leaderboard($('#game-leaderboard').find('.list'));
+		$('#game-leaderboard').on('click','a[href=#morepaihb]',function(){
+			alert("查看更多");
+		});
+	});
+</script>

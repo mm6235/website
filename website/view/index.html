@@ -22,7 +22,9 @@
 
 <script src="../js/seajs/sea.js"></script>
 <script>
-
+function function_name(argument) {
+  // body...
+}
   // Set configuration
   seajs.config({
     base: "./js/seajs/",
@@ -40,7 +42,22 @@
   
 </script>
 <script type="text/javascript">
-
+  jQuery("#typeid_ctrl_menu").on("click",'li',function(){
+    var v = jQuery("#typeid option").val();
+    var tlink = "<em>&rsaquo;</em><a href='forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid="+v+"'>+'jQuery(this).text()+'</a>";
+    jQuery("#typeid_text").html(tlink);
+  });
 </script>
-</body>
+<button type="submit" id="postsubmit" class="pn pnc" value="true" name="editsubmit" disabled="">
+<span>保存</span>
+</button>
+    <form id="favoriteform_'+t+'" name="favoriteform_'+t+'" method="post" autocomplete="off" action="home.php?mod=spacecp&amp;ac=favorite&amp;op=delete&amp;favid=117&amp;type=all" onsubmit="ajaxpost(this.id,"return_a_delete_'+t+'");" fwin="a_delete_'+t+'">
+    <input type="hidden" name="referer" value="http://bbstest.tuobar.com/home.php?mod=space&amp;uid=99&amp;do=favorite&amp;view=me&amp;type=all&amp;quickforward=1">
+    <input type="hidden" name="deletesubmit" value="true">
+    <input type="hidden" name="formhash" value="b1b29bd1">
+    <input type="hidden" name="handlekey" value="a_delete_117"><div class="c">您确定要删除此收藏吗？</div>
+    <p class="o pns">
+    <button type="submit" name="deletesubmitbtn" value="true" class="pn pnc"><strong>确定</strong></button>
+    </p>
+    </form>
 </html>

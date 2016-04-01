@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<!-- 360 使用Chrome内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止百度转码 -->
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<!-- UC强制竖屏，全屏，应用模式 -->
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<!-- QQ强制竖屏，全屏，应用模式 -->
+	<meta name="x5-orientation"content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<title>游戏</title>
+	<link rel="stylesheet" type="text/css" href="src/amimate.css"/>
+	<link rel="stylesheet" type="text/css" href="src/main.css"/>
+	<script src="src/sea.js" type="text/javascript" charset="utf-8"></script>
+	<script src="src/sea-config.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--游戏场景开始-->
+	<div id="gamesapp" class="g-main">
+		<div id="games-loading" class="p-loading">
+			<div class="feiji"><img src="src/images/loading-fj.png"/></div>
+			<div class="loading">
+				<p></p>
+			</div>
+			<div class="number">0%</div>
+		</div>
+	</div>
+<!--游戏场景结束-->
+<script type="text/javascript">
+	seajs.use('main.js');
+</script>
+</body>
+</html>

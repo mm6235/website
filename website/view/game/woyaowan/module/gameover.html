@@ -1,0 +1,205 @@
+<!--
+	作者：914230482@qq.com
+	时间：2015-12-28
+	描述：游戏结束
+-->
+<div class="m-gameover">
+	<div class="textbox">
+		<div class="header" id="touxiang"></div>
+		<div class="pingfen">
+			<p class="p1">经过拖把儿分析</p>
+			<p class="p2" id="gamesbiaoti">***</p>
+			<ul class="games-tongji" id="games-statistics">
+				<li>鹰眼：</li>
+				<li>心理：</li>
+				<li>分配力：</li>
+			</ul>
+			<!--<ul>
+				<li><span class="text">鹰眼指数：</span><span class="img"><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/></span></li>
+				<li><span class="text">心理指数：</span><span class="img"><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/></span></li>
+				<li><span class="text">分配力指数：</span><span class="img"><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/><img src="/public/static/youxi/woyaowan/src/images/icon-xin2.png"/></span></li>
+			</ul>-->
+			<div class="hr"></div>
+			<blockquote id="gamesdes">
+				你像小田千里一样凡事讲求精确无比，遇事能够妥善处置自己的情绪。在学飞过程中，没准能遇到自己志同道合的好友兼竞争对手，在竞争中愈发成为一个优秀的飞行员。
+			</blockquote>
+		</div>
+	</div>
+	<div class="repert" id="games-zlyc"><img src="/public/static/youxi/woyaowan/src/images/zailaiyici.png" /></div>
+	<ul class="btns">
+		<li id="games-follow"><img src="/public/static/youxi/woyaowan/src/images/fenxiangyixia.png"/></li>
+		<li id="games-fxty" data-id="0"><img src="/public/static/youxi/woyaowan/src/images/fxty.png"/></li>
+	</ul>
+</div>
+<div class="m-games-followbox" id="games-followbox"></div>
+<script type="text/javascript">
+	seajs.use('TGM',function(TGM){
+		console.log('进入游戏结束页面');
+		var mxdata = [
+			{
+				title : "《miss pilot》",
+				name : "手冢晴",
+				des : "你像手冢晴一样心思细腻，有毅力。碰到挫折也能靠自己对飞行的热爱和勤奋而坚持下来。最终会成为一名优秀的飞行员。",
+				img : "mx-1.jpg"
+			},
+			{
+				title : "《miss pilot》",
+				name : "小田千里",
+				des : "你像小田千里一样凡事讲求精确无比，遇事能够妥善处置自己的情绪。在学飞过程中，没准能遇到自己志同道合的好友兼竞争对手，在竞争中愈发成为一个优秀的飞行员。",
+				img : "mx-2.jpg"
+			},
+			{
+				title : "《冲上云霄》",
+				name : "顾夏阳cool",
+				des : "你像captain cool一样迷人帅气、好胜心强，热爱自由与冒险。稍加磨练，定有望成为驾驶技术高超的飞行员，不日成为机长，坐拥美人，走上人生巅峰。",
+				img : "mx-3.jpg"
+			},
+			{
+				title : "《冲上云霄》",
+				name : "唐亦琛",
+				des : "你像唐亦琛一样性格内敛，有飞行天分，也有拼劲。在学飞过程中脚踏实地，做事井井有条。这一性格特点保证了你飞行事业的一帆风顺，成为机长指日可待。",
+				img : "mx-4.jpg"
+			},
+			{
+				title : "《升空高飞》",
+				name : "高振宇",
+				des : "你像高振宇一样保有热情和纯真，对待飞行严谨认真，能力出众。并且表面看似风流不羁，内心其实很专情。善用你的乐观开朗和风趣幽默，定能为你的飞行生涯加分。 ",
+				img : "mx-5.jpg"
+			},
+			{
+				title : "《升空高飞》",
+				name : "申若云",
+				des : "你像申若云一样积极进取，行事严谨明快，对飞机的喜爱胜过谈恋爱。在这份热衷带动下不断磨练自己的飞行能力。最终能够成为一名优秀的飞行员。",
+				img : "mx-6.jpg"
+			},
+			{
+				title : "《海天之恋》",
+				name : "吴超",
+				des : "你像吴超一样有着飞行的天赋和对飞机的热爱，再加上聪明好学，刻苦钻研。在挫折面前不退缩，定能成为一名优秀的飞行员。",
+				img : "mx-7.jpg"
+			},
+			{
+				title : "《壮志凌云》",
+				name : "麦德林",
+				des : "你像麦德林一样能吃苦、有毅力。在为自己订立目标之后，不达成绝不放弃。即使有过意志消沉，也能在最后奋起，纵横蓝天，成为一名优秀的飞行员！",
+				img : "mx-8.jpg"
+			},
+			{
+				title : "《壮志凌云》",
+				name : "古斯",
+				des : "你像古斯一样有着极高的飞行天赋，却不锋芒毕露。善于与人配合，对友人关怀备至，是一个极佳的飞行员搭档。",
+				img : "mx-9.jpg"
+			},
+			{
+				title : "《壮志凌云》",
+				name : "史奈德",
+				des : "你像史奈德一样有望成为一个技术高超的飞行员，在关键时刻，通常能够以大局为重，是一个可靠的实力派飞行员。",
+				img : "mx-10.jpg"
+			},
+			{
+				title : "《迫降航班》",
+				name : "维普·惠特克",
+				des : "你像维普·惠特克一样沉着冷静，有超高的飞行技术。在危急时刻，是个能把控全局的硬派机长。",
+				img : "mx-11.jpg"
+			},
+			{
+				title : "《开心直航》 ",
+				name : "铃木和博",
+				des : "你像铃木和博一样对飞行有极大的热爱，遇事临危不乱。并且能够为了目标每天不断的在严格训练中磨练。同时还是个非常注意外表的人，堪与处女座的完美主义相比。",
+				img : "mx-12.jpg"
+			}
+		];
+		// 关注
+		$('#games-follow').on('click',function(){
+			$('#games-followbox').show();
+		});
+		$('#games-followbox').on('click',function(){
+			$(this).hide();
+		});
+		// 输出统计分数
+		var mxdataRandom = Math.floor(Math.random()*11);
+		$('#touxiang').html('<img src="/public/static/youxi/woyaowan/src/images/'+mxdata[mxdataRandom].img+'" />');
+		$('#gamesbiaoti').text('您是'+mxdata[mxdataRandom].title+'的'+mxdata[mxdataRandom].name);
+		$('#gamesdes').text(mxdata[mxdataRandom].des);
+		$('#games-statistics li').eq(0).html('鹰眼：全部'+TGM.statistics.leveldata[1].allAnswer+' 正确：'+TGM.statistics.leveldata[1].correctAnswer + ' 错误：'+TGM.statistics.leveldata[1].errorAnswer);
+		$('#games-statistics li').eq(1).html('心理：全部'+TGM.statistics.leveldata[2].allAnswer+' 正确：'+TGM.statistics.leveldata[2].correctAnswer + ' 错误：'+TGM.statistics.leveldata[2].errorAnswer);
+		$('#games-statistics li').eq(2).html('分配力测试：全部'+TGM.statistics.leveldata[3].allAnswer+' 正确：'+TGM.statistics.leveldata[3].correctAnswer + ' 错误：'+TGM.statistics.leveldata[3].errorAnswer);
+		TGM.statistics.fraction = TGM.statistics.leveldata[1].fraction + TGM.statistics.leveldata[2].fraction + TGM.statistics.leveldata[3].fraction;
+		TGM.statistics.types=gamesapp.types;
+		// 提交数据
+		$.ajax({
+			type:"post",
+			url:"/youxiw/woyaowandatiwan",
+			data : TGM.statistics,
+			dataType : 'json',
+			success : function(data){
+				console.log('提交数据成功');
+				if(data.status=='ok'){
+					$("#games-fxty").data('id',data.id);
+					gamesapp.fximg = data.fximg;
+					gamesapp.fxname = data.fxname;
+					gamesapp.fxdesc = data.fxdesc;
+					gamesapp.fxtitle = data.fxtitle;
+					gamesapp.fxlink = data.fxlink;	
+					 wx.onMenuShareTimeline({
+						title: gamesapp.fxtitle, // 分享标题
+						link: gamesapp.fxlink, // 分享链接
+						imgUrl: gamesapp.fximg, // 分享图标
+						success: function () { 
+							// 用户确认分享后执行的回调函数
+							alert('分享成功');
+							share('sharecircle',gamesapp.types);
+							$("#games-followbox").hide();
+						},
+						cancel: function () { 
+							// 用户取消分享后执行的回调函数
+							alert('分享失败');
+							$("#games-followbox").hide();
+						}
+					});
+					wx.onMenuShareAppMessage({
+						title: gamesapp.fxtitle, // 分享标题
+						desc: gamesapp.fxdesc, // 分享描述
+						link: gamesapp.fxlink, // 分享链接
+						imgUrl: gamesapp.fximg, // 分享图标
+						type: 'link', // 分享类型,music、video或link，不填默认为link
+						dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+						success: function () { 
+							// 用户确认分享后执行的回调函数
+							alert('分享成功');
+							share('sharepal',gamesapp.types);
+							$("#games-followbox").hide();
+						},
+						cancel: function () { 
+							// 用户取消分享后执行的回调函数
+							alert('分享失败');
+							$("#games-followbox").hide();
+						}
+					});
+				}else{
+					alert(data.info);
+				}
+			},
+			error : function(XMLHttpRequest, textStatus, errorThrown){
+				alert(errorThrown);
+			}
+		});
+		
+		// 点击飞行体验
+		$('#games-fxty').on('click',function(){
+			$.ajax({
+				type:"get",
+				url:"/youxiw/woyaowan_shaerclick/id/"+$("#games-fxty").data("id")+"/types/"+gamesapp.types,
+				success : function(data){
+					location.href='http://m.tuobar.com';
+				}
+			});
+		});
+		
+		// 再玩一次
+		$('#games-zlyc').on('touchend',function(){
+			location.href='/youxiw/woyaowan/types/'+gamesapp.types;
+			//TGM.gameReset();
+		});
+	});
+</script>

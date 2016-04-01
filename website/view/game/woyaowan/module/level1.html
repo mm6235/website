@@ -1,0 +1,158 @@
+<!--
+	作者：914230482@qq.com
+	时间：2015-12-24
+	描述：第一关
+-->
+<style>
+	.animation{	
+		-webkit-animation: rotation .5s linear infinite;
+		-moz-animation: rotation .5s linear infinite;
+		animation: rotation .5s linear infinite;
+	}
+	@-webkit-keyframes rotation{
+		0%{-webkit-transform:rotate(0deg);}
+		40%{-webkit-transform:rotate(360deg);}
+		100%{-webkit-transform:rotate(720deg);}
+	}
+	@-moz-keyframes rotation{
+		0%{-moz-transform:rotate(0deg);}
+		40%{-moz-transform:rotate(360deg);}
+		100%{-moz-transform:rotate(720deg);}
+	}
+	@keyframes rotation{
+		0%{-webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); transform:rotate(0deg);}
+		40%{-webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); transform:rotate(360deg);}
+		100%{-webkit-transform:rotate(720deg); -moz-transform:rotate(720deg); transform:rotate(720deg);}
+	}
+</style>
+<div class="p-level zc animated" id="games-zcbox">
+	<div class="gz-title">
+		<p class="animated" data-am-type="bounceInLeft" data-am-time=0><img width="35.6%" src="/public/static/youxi/woyaowan/src/images/gz-1.png"/></p>
+		<p class="animated" data-am-type="bounceInLeft" data-am-time=400><img width="35.6%" src="/public/static/youxi/woyaowan/src/images/gq1-7.png"/></p>
+	</div>
+	<div class="gz-box animated" data-am-type="fadeInUp" data-am-time=600>
+		<div class="title"><img width="23%" src="/public/static/youxi/woyaowan/src/images/gz-2.png"/></div>
+		<div class="ext">判断C表缺口指向，10s内正确数越多，等级越高。</div>
+		<div class="con animated" data-am-type="fadeIn" data-am-time=1500>
+			<img width="27%" style="margin-right: 12%;" src="/public/static/youxi/woyaowan/src/images/gq1-5.png"/>
+			<img width="27%" src="/public/static/youxi/woyaowan/src/images/gq1-3.png"/>
+		</div>
+		<div id="games-play" class="gz-start animated" data-am-type="fadeIn" data-am-time=2000><img src="/public/static/youxi/woyaowan/src/images/gz-7.png"/></div>
+	</div>
+	<div class="gz-tbrg animated" data-am-type="bounceInRight" data-am-time="400"><img src="/public/static/youxi/woyaowan/src/images/gz-6.png"/></div>
+</div>
+<div class="p-level gq animated" style="display: none;" id="games-gqbox">
+	<div class="m-timer" id="games-timer"></div>
+	<div class="m-games level1">
+		<div id="games-zhuanpan" class="zhuanpan"><span></span></div>
+	</div>
+	<div class="m-btns level1" id="games-btns">
+		<ul>
+			<li class="btn1" data-deg="1"></li>
+			<li class="btn2" data-deg="2"></li>
+			<li class="btn3" data-deg="3"></li>
+			<li class="btn4" data-deg="0"></li>
+			<li class="btn5" data-deg="4"></li>
+			<li class="btn6" data-deg="7"></li>
+			<li class="btn7" data-deg="6"></li>
+			<li class="btn8" data-deg="5"></li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+	seajs.use('TGM',function(TGM){
+		console.log('进入第一个关卡');
+		// 点击开始
+		$('#games-play').one('click',function(){
+			console.log('点击开始');
+			// 开始游戏
+			$('#games-zcbox').addClass('flipOutY');
+			setTimeout(function(){
+				$('#games-zcbox').remove();
+				$('#games-gqbox').addClass('flipInY').show();
+				initgames();
+			},600);
+			
+		});
+		function initgames(){
+			console.log('游戏开始，进入游戏界面');
+			var allAnswer = 0; //总共回答
+			var correctAnswer = 0;//回答正确
+			// 是否在动画中
+			var motion = true; 
+			// 声明角度数据
+			var angular = [0,45,90,135,180,225,270,315];
+			// 随机方向
+			var turnDir;
+			// 倒计时时间
+//			var gtimer = TGM.config.levelTime;
+			var gtimer = 9; //第一关十秒（明明）
+			// 是否结束
+			var isgameover = false;
+			// 当游戏时间结束，统计数据和跳转到下一个关卡
+			TGM.timerinit('#games-timer',gtimer,function(){
+				// 本次关卡游戏结束
+				isgameover = true;
+				// 创建关卡数据
+				TGM.statistics.leveldata = TGM.statistics.leveldata || [];
+				TGM.statistics.leveldata[1] = {
+					'allAnswer' : allAnswer,
+					'correctAnswer' : correctAnswer,
+					'errorAnswer' : allAnswer - correctAnswer,
+					'fraction' : correctAnswer - (allAnswer - correctAnswer)
+				};
+				console.log(TGM.statistics.leveldata);
+				console.log('关卡结束，准备进入下一个场景');
+				$('#games-gqbox').addClass('zoomOutUp animated'); // 移除loading
+				TGM.nextlevel();
+			});
+			randDirection();//初次调用
+			function randDirection(){
+				// 设置动画状态为true
+				motion = true;
+				// 赋值随机数
+				turnDir = createRand(8)-1;
+				//TGM.palyAudio('zhuanpan',false,500);
+				// 转动转盘
+				$("#games-zhuanpan").addClass("animation"); // 添加动画	
+				setTimeout(function(){
+					// 删除动画
+					$("#games-zhuanpan").removeClass("animation");
+					$("#games-zhuanpan").css({
+						"transform":"rotate3D(0,0,1,"+angular[turnDir]+"deg)"
+					}); //赋值随机数
+					motion =false; //设置动画状态为false
+				},500);
+				console.log('创建关卡题目');
+			}
+			// 鼠标点击选择方向
+			$('#games-btns').on('touchend','li',function(){
+				// 动画状态中或者关卡结束后不可选择答案
+				if(motion || isgameover){
+					return false;
+				}
+				//TGM.palyAudio('dianji');
+				if($(this).data('deg')  == turnDir){
+					correctAnswer++;// 正确
+				}
+				// 缩放等级最高为5级
+				if(correctAnswer < 5 && correctAnswer != 0){
+					$('#games-zhuanpan span').css('transform','scale(0.'+(10-correctAnswer*1.5)+')');
+				}
+				allAnswer++;
+				console.log('当前选中的是'+$(this).data('deg'));
+				console.log("全部："+allAnswer+",正确："+correctAnswer);
+				// 重新随机正确方向
+				randDirection();
+			});
+			/**
+	  	 *获取随机数
+	  	 */
+			function createRand(max){
+				var ranNum=Math.ceil(Math.random()*max);
+				return ranNum;
+			};
+		}
+	});
+</script>

@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	
-
+	 Psychological()
+	 timerinit(".timer",'10');
 	var eyesAll="0"     	// 最强鹰眼全部题目
 	var eyesCorrect="0" 	// 最强鹰眼正确回答题目
 	var eyeserror="0"   	// 最强鹰眼错误回答题目
@@ -95,14 +95,43 @@ $(document).ready(function() {
 		  	var count2 = $("#js-count2").find(".exprs"); //第二个表达式
 		  	var typeId =["+","-","+","-"]; //运算符号
 		  	// 随机表达式
+		  	var createE = createRandom(3,0,9);
+
 		  	var roand1 = createRand(9)+typeId[createRand(4)-1]+createRand(9)+typeId[createRand(4)-1]+createRand(9);
 		  	var roand2 = createRand(9)+typeId[createRand(4)-1]+createRand(9)+typeId[createRand(4)-1]+createRand(9);
+		  	
+		  	var roand3 = createE[0]+typeId[createRand(4)-1]+createE[1]+typeId[createRand(4)-1]+createE[2];
+		  	console.log(roand3);
 		  	//打印随机表达式
 		  	count1.text(roand1);
 		  	count2.text(roand2);
-		  	//获取计算结果
+
+
+			//获取计算结果
 		  	var answer1 = comSubDone(count1.text());
 		  	var answer2 = comSubDone(count2.text());
+			/**
+			 * 计算三位运算函数
+		     * @param {Object} str 计算表达式
+		     * calculateDone('3+2+1')
+			 */
+		  	function calculateDone(str){
+		    	var arr = str.split("");
+		    	var num = 0;
+		    	if(arr[1] == '+'){
+		    		num = parseInt(arr[0]) + parseInt(arr[2]);
+		    	}else{
+		    		num = parseInt(arr[0]) - parseInt(arr[2]);
+		    	};
+		    	if(arr[3] == '+'){
+		    		num = parseInt(num) + parseInt(arr[4]);
+		    	}else{
+		    		num = parseInt(num) - parseInt(arr[4]);
+		    	}
+		    	return num;
+	  		};
+		  	
+		  	
 		  	/*
 		  	// 显示结果
 		    $("#js-answer4").text(answer1);
@@ -294,3 +323,4 @@ $(document).ready(function() {
 	};
 	
 });
+

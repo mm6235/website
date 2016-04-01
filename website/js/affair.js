@@ -8,7 +8,7 @@ define(function(require, exports, module) {
     this.spinnings = [];
   }
 
-  module.exports = Spinning;
+  module.exports = Spinning;PHPStorm
 
   Spinning.prototype.render = function() {
     this._init();

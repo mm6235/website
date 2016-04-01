@@ -1,0 +1,235 @@
+<!--
+	作者：914230482@qq.com
+	时间：2015-12-25
+	描述：第三关
+-->
+<style type="text/css">
+	.gz-box .con{ padding-top: 7%; }
+	.gz-start{ margin-top: 5%; }
+</style>
+<div class="p-level zc animated" id="games-zcbox">
+	<div class="gz-title">
+		<p class="animated" data-am-type="bounceInLeft" data-am-time=0><img width="35.6%" src="src/images/gz-1.png"/></p>
+		<p class="animated" data-am-type="bounceInLeft" data-am-time=400><img width="40%" src="src/images/gq3-2.png"/></p>
+	</div>
+	<div class="gz-box animated" data-am-type="fadeInUp" data-am-time=600>
+		<div class="title"><img width="23%" src="src/images/gz-2.png"/></div>
+		<div class="ext">10S内，根据仪表变化判断飞机飞行状态。</div>
+		<div class="con animated" data-am-type="fadeIn" data-am-time=1500>
+			<img width="80%" src="src/images/gq3-1.png"/>
+		</div>
+		<div id="games-play" class="gz-start animated" data-am-type="fadeIn" data-am-time=2000><img src="src/images/gz-7.png"/></div>
+	</div>
+	<div class="gz-tbrg animated" data-am-type="bounceInRight" data-am-time="400"><img src="src/images/gz-6.png"/></div>
+</div>
+<div class="p-level gq animated" style="display: none;" id="games-gqbox">
+	<div class="m-timer" id="games-timer"></div>
+	<div class="m-games level3">
+		<div class="left shu">
+			<h3>速度</h3>
+			<dl>
+				<dt>KTS</dt>
+				<dd>
+					<ul id="js-leftbp">
+						<li>300</li><li>280</li><li>260</li><li>240</li><li>220</li>
+						<li>200</li><li>180</li><li>160</li><li>140</li><li>120</li>
+						<li>100</li><li>80</li><li>60</li><li>40</li><li>20</li><li>0</li>
+					</ul>
+					<div class="mack"><img src="src/images/gq3-7.png"/></div>
+				</dd>
+			</dl>
+		</div>
+		<div class="right shu">
+			<h3>高度</h3>
+			<dl>
+				<dt>Feet</dt>
+				<dd>
+					<ul id="js-rightbp">
+						<li>3000</li><li>2800</li><li>2600</li><li>2400</li><li>2200</li>
+						<li>2000</li><li>1800</li><li>1600</li><li>1400</li><li>1200</li>
+						<li>1000</li><li>800</li><li>600</li><li>400</li><li>200</li><li>0</li>
+					</ul>
+					<div class="mack"><img src="src/images/gq3-7.png"/></div>
+				</dd>
+			</dl>
+		</div>
+		<div class="con">
+			<div class="ph" id="js-shuiping"><img src="src/images/gq3-3.png"/></div>
+			<img src="src/images/gq3-8.png"/>
+			<h3>水平偏移</h3>
+		</div>
+	</div>
+	<div class="m-btns level3" id="games-btns">
+		<ul>
+			<li class="btn1"></li>
+			<li class="btn2"></li>
+			<li class="btn3"></li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+	seajs.use('TGM',function(TGM){
+		console.log('进入第三个关卡');
+		// 点击开始
+		$('#games-play').on('click',function(){
+			console.log('点击开始');
+			// 开始游戏
+			$('#games-zcbox').addClass('flipOutY');
+			setTimeout(function(){
+				$('#games-zcbox').remove();
+				$('#games-gqbox').addClass('flipInY').show();
+				initgames();
+			},600);
+		});
+		function initgames(){
+			console.log('游戏开始，进入游戏界面');
+			var allAnswer = 0; //总共回答
+			var correctAnswer = 0;//回答正确
+			// 是否在动画中
+			var motion = false; 
+			// 倒计时时间
+			var gtimer = TGM.config.levelTime;
+			// 是否结束
+			var isgameover = false;
+			// 当游戏时间结束，统计数据和跳转到下一个关卡
+			TGM.timerinit('#games-timer',gtimer,function(){
+				// 本次关卡游戏结束
+				isgameover = true;
+				// 创建关卡数据
+				TGM.statistics.leveldata = TGM.statistics.leveldata || [];
+				TGM.statistics.leveldata[3] = {
+					'allAnswer' : allAnswer,
+					'correctAnswer' : correctAnswer,
+					'errorAnswer' : allAnswer - correctAnswer,
+					'fraction' : correctAnswer - (allAnswer - correctAnswer)
+				};
+				console.log(TGM.statistics.leveldata);
+				console.log('关卡结束');
+				$('#games-gqbox').addClass('zoomOutUp animated'); // 移除loading
+				TGM.nextlevel();
+			});
+			
+  		// 行高
+  		var lineHeight = $('#js-leftbp li').eq(0).height();
+  		// 设置初始位置在刻度盘中间
+  		$('#js-leftbp,#js-rightbp').css('top',-7*lineHeight);
+  		var random = 0; // 随机数
+  		// 数据
+  		var arr = [
+  			// 加速上升右转
+  			[[3,1],[14,6],[0,45]],
+  			[[13,9],[10,3],['-30',20]],
+  			[[8,4],[6,1],['-45',45]],
+  			[[10,2],[15,10],['-10',30]],
+  			[[14,10],[9,4],['-20',20]],
+  			[[15,11],[5,0],[0,20]],
+  			[[9,1],[7,1],[10,30]],
+  			[[7,0],[12,5],[4,35]],
+  			[[13,8],[9,2],[6,20]],
+  			[[12,6],[5,2],[14,25]],
+  			// 减速下降左转
+  			[[1,8],[1,8],[45,0]],
+  			[[9,14],[3,9],[45,'-45']],
+  			[[4,9],[5,10],[20,'-10']],
+  			[[2,10],[7,12],[30,'-30']],
+  			[[5,14],[6,12],[40,'-10']],
+  			[[7,15],[5,13],[10,'-45']],
+  			[[1,9],[5,15],[0,'-45']],
+  			[[3,8],[3,15],[0,'-45']],
+  			[[2,13],[2,7],[30,'-30']],
+  			[[0,6],[1,8],[10,'-45']],
+  			// 加速上升左转
+  			[[5,1],[14,6],[45,'-45']],
+  			[[12,6],[10,3],[45,'-20']],
+  			[[15,0],[9,2],[20,'-10']],
+  			[[10,2],[12,6],[30,'-15']],
+  			[[11,5],[6,0],[45,'-20']],
+  			[[9,2],[5,0],[40,'-10']],
+  			[[8,1],[14,6],[0,'-45']],
+  			[[6,0],[7,0],[0,'-30']],
+  			[[15,7],[5,0],[20,'-20']],
+  			[[14,3],[8,1],[0,'-45']]
+  		]
+  		randstate();//初次调用
+  		function randstate(){
+  			random = (createRand(30)-1);
+  			// 移除动画设置初始值
+				$("#js-leftbp").removeClass('am').css('top',-arr[random][0][0]*lineHeight+2*lineHeight);
+				$("#js-rightbp").removeClass('am').css('top',-arr[random][1][0]*lineHeight+2*lineHeight);
+				$("#js-shuiping").removeClass('am').css('transform','rotateZ('+arr[random][2][0]+'deg)');
+				// 添加动画滚动到指定位置
+				setTimeout(function(){
+					$("#js-leftbp").addClass('am').css('top',-arr[random][0][1]*lineHeight+2*lineHeight);
+					$("#js-rightbp").addClass('am').css('top',-arr[random][1][1]*lineHeight+2*lineHeight);
+					$("#js-shuiping").addClass('am').css('transform','rotateZ('+arr[random][2][1]+'deg)');
+				},200);
+  			console.log(arr[random]);
+  		};
+  		// 鼠标移入选择状态
+  		$("#games-btns").on("touchend",'li',function(){
+  			// 如果关卡结束或者处于禁用状态则阻止执行
+  			if(isgameover || motion){
+  				return false;
+  			}
+  			// 禁用按钮设置状态
+  			$('#games-btns').addClass('disabled');
+  			motion = true;
+  			// 200ms后解除禁用
+  			setTimeout(function(){
+	  			$('#games-btns').removeClass('disabled');
+	  			motion = false;
+	  		},200);
+	  		// 播放音效
+  			TGM.palyAudio('dianji',false,500);
+  			var index = $(this).index();
+  			console.log(index);
+  			if (random<10 && index == "0") {
+					// 正确
+					correctAnswer++;
+  			}else if (random >= 10 && random < 20 && index == "1"){
+					// 正确
+					correctAnswer++;
+  			}else if (random >= 20 && random<30 && index == "2") {
+					// 正确
+					correctAnswer++;
+				}
+  			allAnswer++;
+  			console.log("全部："+allAnswer+",正确："+correctAnswer);
+  			randstate();
+  		});
+		}
+		/**
+  	 *获取随机数
+  	 */
+		function createRand(max){
+			var ranNum=Math.ceil(Math.random()*max);
+			return ranNum;
+		};
+		/**
+   	 * createRandom() 获取不相同的随机数
+   	 * @param {Object} num 要产生多少个随机数
+   	 * @param {Object} from 产生随机数的最小值
+   	 * @param {Object} to 产生随机数的最大值
+   	 *createRandom(10,0,50)生成10组0到50不重复的随机数
+   	 */
+    function createRandom(num , from , to)
+    {
+      var arr=[];
+      var json={};
+      while(arr.length<num)
+      {
+        //产生单个随机数
+        var ranNum=Math.ceil(Math.random()*(to-from))+from;
+        //通过判断json对象的索引值是否存在 来标记 是否重复
+        if(!json[ranNum])
+        {
+          json[ranNum]=1;
+          arr.push(ranNum);
+        }
+           
+      }
+      return arr;
+    };
+	});
+</script>

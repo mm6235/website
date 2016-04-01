@@ -1,0 +1,130 @@
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+q:before,q:after{content:none;}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
+body{background:#fff;}
+a,a:hover{color:#333;} 
+
+
+/* 全局 */
+/*@font-face {
+	font-family: 'lhandw';
+  src:url('images/ftz.ttf') format('truetype');
+}*/
+html,body{ width: 100%; height: 100%; overflow: hidden; background: url(images/gamebg.jpg); background-size: cover; }
+.g-main{ max-width: 640px; width: 100%; height: 100%; margin: 0 auto; position: fixed; left: 0; top: 0; right: 0; bottom: 0; }
+
+/* 场景 loading */
+.p-loading{ width: 60%; margin: 0 auto; }
+.p-loading .feiji{ width: 17%; margin-top: 100%; margin-bottom: 5%; position: relative; -webkit-transition: left .2s ease; -moz-transition: left .2s ease; transition: left .2s ease;}
+.p-loading .feiji img{ width: 100%; }
+.p-loading .loading{ height: 10px; width: 100%; background: #b1b1b1; position: relative; border-radius: 10px; overflow: hidden; }
+.p-loading .loading p{ height: 100%; width: 0px; background: #d71922; position: absolute; left: 0; top: 0; transition: width .2s ease; -webkit-transition: width .2s ease; -moz-transition: width .2s ease; }
+.p-loading .number{ text-align: center; line-height: 3; color: #c1c1c1; font-size: 20px; /*font-family: arial 'lhandw';*/ }
+
+
+/*关卡*/
+.p-level{ width: 100%; height: 100%; }
+
+/*规则*/
+.gz-title{ padding: 5% 0; position: relative; z-index: 1; }
+.gz-title p img{ margin-left: 8%; }
+.gz-title p+p img{ margin-top: 1%; margin-left: 34%; }
+.gz-box{ background: url(images/gz-5.png); background-size: cover; width: 95%; margin: 0 auto; height: 0; padding-bottom: 106%; position: relative; z-index: 1; }
+.gz-box .title{ text-align: center; padding: 2.5% 0; }
+.gz-box .ext{ width: 75%; line-height: 1.4; margin: 4% auto; font-size: 16px; }
+.gz-box .con{ padding-top: 15%; text-align: center; }
+.gz-tbrg{ position: absolute; right: 0; top: 0; margin-top: 5%; width: 25%; z-index: 0; }
+.gz-tbrg img{ width: 100%; }
+.gz-start{ text-align: center; margin-top: 10%; }
+.gz-start img{ width: 40%; }
+
+/*游戏*/
+.m-timer{ width: 50%; font-size: 20px; background: url(images/timerbox.png); background-size: cover; padding-bottom: 18%; height: 0; margin: 0 auto; margin-top: 3%; /*font-family: arial 'lhandw';*/ }
+.m-timer .box{ padding-top: 16%; padding-left: 40%; }
+.m-games{ overflow: hidden;height: 0; padding-bottom: 75%; margin-top: 3%; background: url(images/gq1-8.png) bottom center no-repeat; background-size: 100%; }
+.m-btns{ margin-top: 0%; padding: 0 7.5%; /*font-family: arial 'lhandw';*/ }
+/*游戏封面*/
+.m-gamesfengmian{ background: url(images/fm-1.jpg); background-size: cover; position: fixed;  top: 0; left: 0; right: 0; bottom: 0;}
+.m-gamesfengmian .p1{ width: 47%; margin-left: 10%; margin-top: 5%; }
+.m-gamesfengmian img{ width: 100%; }
+.m-gamesfengmian .p2{ width: 45%; margin-left: 42%; margin-top: -13%; }
+.m-gamesfengmian .p3{ position: absolute; width: 47%; left: 10px; margin-top: 30%; }
+.m-gamesfengmian .p4{ position: absolute; width: 55%; right: 10px; }
+.m-gamesfengmian .p5{ width: 30%; position: absolute; bottom: 20%; right: 20%; }
+.m-gamesfengmian .p6{ width: 45%; position: fixed; bottom: 5%; left: 50%; margin-left: -22.5%; }
+/* 关卡一 */
+.m-games.level1 .zhuanpan{ width: 20%; margin-left: 30%; margin-top: 18%; }
+.m-games.level1 .zhuanpan span{ width: 100%; padding-bottom: 100%; display: inline-block; background: url(images/gq1-1.png) no-repeat; background-size: 100%; }
+.m-btns.level1 li{ width: 26.6%; padding-bottom: 13.3%; background: url(images/gq1-2.png) no-repeat; background-size: 100%; float: left; margin-right: 8%; margin-bottom: 5%; -moz-transition:all .3s ease; -webkit-transition:all .3s ease; transition: all .3s ease; }
+.m-btns.level1 li.btn1{ background-position-y: 13.8%; }
+.m-btns.level1 li.btn2{ background-position-y: 28.3%; }
+.m-btns.level1 li.btn3{ background-position-y: 42.5%; margin-right: 0; }
+.m-btns.level1 li.btn4{ background-position-y: 0%; margin-right: 42.6%; }
+.m-btns.level1 li.btn5{ background-position-y: 57%; margin-right: 0; }
+.m-btns.level1 li.btn6{ background-position-y: bottom; }
+.m-btns.level1 li.btn7{ background-position-y: 85.9%; }
+.m-btns.level1 li.btn8{ background-position-y: 71.1%; margin-right: 0; }
+/*关卡二*/
+.m-games.level2{ background: url(images/gq2-2.png); background-size: cover; }
+.m-games.level2 .timu{ width: 40%; margin: 0 auto; text-align: center; margin-top: 39%; color: #fff; line-height: 1.4; font-size: 20px; /*font-family: arial 'lhandw';*/}
+.m-btns.level2{ padding: 0; font-size: 25px; text-align: center; line-height: 1.8; color: #df1919; }
+.m-btns.level2 li{ background: url(images/gq2-1.png) no-repeat; background-size: cover; width: 63%; height: 0; padding-bottom: 13%; margin: 0 auto; margin-bottom: 5%; }
+.m-btns.level2 li.btn2{ background-position-y: 50%; }
+.m-btns.level2 li.btn3{ background-position-y: bottom; }
+/*关卡三*/
+.m-games.level3{ background: url(images/gq3-4.jpg); background-size: cover; position: relative; }
+.m-games.level3 .shu{ width: 10%; height: 47%; border-bottom: 1px solid #fff; overflow: hidden; position: absolute; left: 26%; text-align: center; color: #fff; top: 28%; font-size: 12px;line-height: 1.2; }
+.m-games.level3 .shu.right{ left: auto; right: 26%; }
+.m-games.level3 .shu dl{ border: 1px solid #fff; }
+.m-games.level3 .shu dl dt{ border-bottom: 1px solid #fff; background: #101130; }
+.m-games.level3 .shu dd{ overflow: hidden; }
+.m-games.level3 .shu ul{ position: relative; top: 0; }
+.m-games.level3 .shu ul li{ position: relative; }
+.m-games.level3 .shu ul li:before{ content: ""; position: absolute; right: 0; top: 50%; width: 6px; height: 2px; margin-top: -1px; background: #fff; }
+.m-games.level3 .shu ul li.k:before{ width: 3px; }
+.m-games.level3 .shu .mack{ width: 100%; position: absolute; top: 5em; left: 0; }
+.m-games.level3 .shu .mack img{ width: 100%; }
+.m-games.level3 .con{ width: 20%; position: absolute; left: 50%; top: 35%; margin-left: -10.5%; color: #fff; text-align: center; }
+.m-games.level3 .con img{ width: 100%; }
+.m-games.level3 .con .ph{position: absolute; top: 7%; transform: rotateZ(45deg); transform-origin: bottom center; }
+.m-games.level3 .shu ul.am,.m-games.level3 .con .ph.am{ -moz-transition: 5s all ease; -webkit-transition: 5s all ease; transition: 5s all ease; }
+.m-btns.level3{ padding: 0; }
+.m-btns.level3 li{ background: url(images/gq3-5.png) no-repeat; background-size: cover; width: 65%; height: 0; padding-bottom: 13%; margin: 0 auto; margin-bottom: 5%; }
+.m-btns.level3 li.btn2{ background-position-y: 50%; }
+.m-btns.level3 li.btn3{ background-position-y: bottom; }
+/*游戏结束*/
+.m-gameover .textbox{ width: 80%; height: 0; line-height: 1.6; padding-bottom: 110%; overflow: hidden; margin: 0 auto; background: url(images/gameoverbg.png) no-repeat; background-size: 100%; }
+.m-gameover .textbox .header{ width: 16%; overflow: hidden; margin: 0 auto; margin-top: 30%; }
+.m-gameover .textbox .header img{ width: 100%; height: 100%; border-radius: 100px; }
+.m-gameover .textbox .p1{ text-align: center; font-size: 16px; color: #666666; }
+.m-gameover .textbox .p2{ text-align: center; font-size: 20px; color: #333; }
+.m-gameover .textbox ul{ width: 80%; margin: 0 auto; text-align: center; color: #e5000c; }
+.m-gameover .textbox ul li{ margin-bottom: 5px; }
+.m-gameover .textbox ul .text{ width: 80px; display: inline-block; text-align: right; }
+.m-gameover .textbox ul img{ width: 16px; height: auto; position: relative; top: 2px; }
+.m-gameover .textbox .hr{ border-bottom: 1px dashed #ddd; height: 0; width: 80%; margin: 0 auto; }
+.m-gameover .textbox blockquote{ padding: 10px 10%; color: #666; font-size: 12px; }
+.m-gameover .repert{ width: 15%; margin: 0 auto; margin-top: -9%; }
+.m-gameover .repert img{ width: 100%; }
+.m-gameover .btns{ width: 80%; margin: 0 auto; text-align: center; margin-top: 5%; }
+.m-gameover .btns li{ display: inline-block; width: 35%; margin: 0 5%; }
+.m-gameover .btns li img{ width: 100%; }
+.m-games-followbox{ position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: url(images/guanzhu.png) rgba(0,0,0,.3) no-repeat; background-size: 100% auto; display: none; }
+.m-gameover .wyltz{ width: 40%; margin: 0 auto; margin-top: 5%; }
+.m-gameover .wyltz img{ width: 100%; }

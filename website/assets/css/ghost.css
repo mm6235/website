@@ -11,7 +11,7 @@ body{position: relative;top: 0;bottom: 0;left: 0;right: 0;background-color: #EBE
 
 /*头部*/
 .m-header{width: 100%;padding: 62px 0}
-.m-header-bg{background:url(/tuobar/website/view/ghost/photo/head-bg.jpg);background-repeat: no-repeat; background-size: cover;-webkit-background-size:cover; background-position: center 20%;}
+.m-header-bg{background:url(/website/view/ghost/photo/head-bg.jpg);background-repeat: no-repeat; background-size: cover;-webkit-background-size:cover; background-position: center 20%;}
 .m-header .logo-tu{display:block; margin:0 auto;padding-bottom:27px;text-align: center;}
 /*头部结束*/
 

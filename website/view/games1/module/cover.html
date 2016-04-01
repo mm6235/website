@@ -1,0 +1,46 @@
+<style type="text/css">
+body{background: url(src/img/fm_01.jpg)center top no-repeat; background-size: 100% 100%;}	
+</style>
+<div class="m-gamesfengmian animated" id="games-fengmian">
+	<div class="p1 animated" data-am-type="bounceInRight" data-am-time=100><img src="src/img/pk_05.png"/></div>
+	<div class="p2 animated" data-am-type="bounceInDown" data-am-time=600><img src="src/img/pk_04.png"/></div>
+	<div class="p3 animated" data-am-type="bounceInLeft" data-am-time=300><img src="src/img/pk_02.png"/></div>		
+	<div class="pbtn animated" data-am-type="bounceInUp" data-am-time=1000 id="games-plays"><img src="src/img/fm_02.png"/></div>
+	<div class="pkrule animated" data-am-type="bounceInUp" data-am-time=1000 id="games-rule"><img src="src/img/pk_11.png"/></div>		
+	<div class="ruledhk">
+		<div class="ruleexp animated">
+			<h3 class="title"></h3>
+			<div class="con ">
+				<p><span>1.</span>玩小游戏后系统将为你统计得分，排行榜将实时跟新。</p>
+				<p><span>2.</span>如果出现同分的情况，以“先到先得”的原则，即先取得相同分数的用户排名会靠前。</p>
+			</div>
+			<div class="hr"></div>
+			<h3 class="title jiangli"></h3>
+			<div class="con">
+				<p><span>1.</span>排行榜的前三名，拖把儿将赠送免费的飞行体验名额。</p>
+				<p><span>2.</span>针对全国的用户，我们可以就近为其安排飞行体验，具体以拖把儿爱飞行提供的飞行体验行程为准。</p>
+			</div>
+			<div class="rofe">*拖把儿爱飞行对此活动拥有最终解释权。</div>
+			<a class="hiderule" id="games-hiderule" href="javascript:void(0);"><img src="src/img/pk_08.png"/></a>
+		</div>
+	</div>		
+</div>
+<script type="text/javascript">
+	seajs.use('TGM',function(TGM){
+		$('#games-plays').on('click',function(){
+			console.log('点击开始游戏');
+			$('#games-fengmian').addClass('zoomOutUp');
+			TGM.gameStart();
+		});
+		$("#games-rule").on('click',function(){
+			$('#games-fengmian').find('.ruledhk').slideDown();
+			$('#games-fengmian').find('.ruleexp').removeClass('zoomOutUp').addClass('zoomInUp');
+		});
+		$("#games-hiderule").on('click',function(){
+			$('#games-fengmian').find('.ruleexp').removeClass('zoomInUp').addClass('zoomOutUp');
+			$('#games-fengmian').find('.ruledhk').slideUp(1000);
+		});
+
+	});
+</script>
+

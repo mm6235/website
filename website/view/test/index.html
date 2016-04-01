@@ -1,404 +1,139 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<!-- pc端 移动端缩放及布局 -->
-	<meta name="viewport"content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<!-- 360浏览器优先使用 chrome内核 -->
-	<meta name='renderer' content='webkit'>
-<title>Hello warld</title>
+<meta charset="UTF-8">
+<title>摇一药</title>
+</head>
 <style type="text/css">
-	.Psychological{padding:20px 30px; clear: both;}
-	.Psychological em{font-style: normal; }
+	* {
+	  box-sizing: border-box;
+	}
 
-	.Psychological .btn button{width: 222px;height: 42px;display: block;margin: 15px 35px;}
+	img,section,article,aside,figure {
+	  display: block;
+	}
 
-	.formula{line-height: 28px; margin-left: 100px;font-size:32px;}
-	.xuanzefx{width: 349px;height: 156px; position: relative;padding: 0;}
-	.xuanzefx li{list-style: none;width: 110px;line-height: 35px; background: green;text-align: center;cursor: pointer;}
-	
-	.xuanzefx .fl{display: inline-block;}
-	.xuanzefx .cen{position: absolute;top:39%;}
-	.xuanzefx .left{left: 0;}
-	.xuanzefx .right{right: 0;}
-	.xuanzefx .five{position: absolute;right: 3px;bottom: 0;}
-	.xuanzefx .down{float: left;position: absolute;bottom: 0;left: 118px;}
-	.xuanzefx .seven{position: absolute;left: 3px;bottom: 0;}
-	
-	.disability  li{background-color: #95958E;}
-	
-	.turncircle{width:100px;height:100px;margin: 50px 0 0 120px;display: inline-block; background:url(image/direction.jpg)center no-repeat;background-size: contain;}
+	body {
+	  background-color: #eee;
+	  font-size: 100%;
+	  font-weight: lighter;
+	  line-height: 1.5;
+	  color: #444;
+	}
 
-	.animation{	-webkit-animation: rotation .5s linear;
-				-moz-animation: rotation .5s linear;
-				-ms-animation: rotation .5s linear;
-				-o-animation: rotation .5s linear;
-				animation: rotation .5s linear;
-			}
-	@-webkit-keyframes rotation{
-		0%{-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
-		25%{-webkit-transform:rotate(90deg);-o-transform:rotate(90deg)transform:rotate(90deg)}
-		50%{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg)transform:rotate(180deg)}
-		755%{-webkit-transform:rotate(270deg);-o-transform:rotate(270deg)transform:rotate(270deg)}
-		100%{-webkit-transform:rotate(360deg);-o-transform:rotate(360deg)transform:rotate(360deg)}}
-	@-moz-keyframes rotation{
-		0%{-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
-		25%{-webkit-transform:rotate(90deg);-o-transform:rotate(90deg)transform:rotate(90deg)}
-		50%{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg)transform:rotate(180deg)}
-		755%{-webkit-transform:rotate(270deg);-o-transform:rotate(270deg)transform:rotate(270deg)}
-		100%{-webkit-transform:rotate(360deg);-o-transform:rotate(360deg)transform:rotate(360deg)}}
-	@-ms-keyframes rotation{
-		0%{-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
-		25%{-webkit-transform:rotate(90deg);-o-transform:rotate(90deg)transform:rotate(90deg)}
-		50%{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg)transform:rotate(180deg)}
-		755%{-webkit-transform:rotate(270deg);-o-transform:rotate(270deg)transform:rotate(270deg)}
-		100%{-webkit-transform:rotate(360deg);-o-transform:rotate(360deg)transform:rotate(360deg)}}
-	@-o-keyframes rotation{
-		0%{-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
-		25%{-webkit-transform:rotate(90deg);-o-transform:rotate(90deg)transform:rotate(90deg)}
-		50%{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg)transform:rotate(180deg)}
-		755%{-webkit-transform:rotate(270deg);-o-transform:rotate(270deg)transform:rotate(270deg)}
-		100%{-webkit-transform:rotate(360deg);-o-transform:rotate(360deg)transform:rotate(360deg)}}
-	@keyframes rotation{
-		0%{-webkit-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}
-		25%{-webkit-transform:rotate(90deg);-o-transform:rotate(90deg)transform:rotate(90deg)}
-		50%{-webkit-transform:rotate(180deg);-o-transform:rotate(180deg)transform:rotate(180deg)}
-		755%{-webkit-transform:rotate(270deg);-o-transform:rotate(270deg)transform:rotate(270deg)}
-		100%{-webkit-transform:rotate(360deg);-o-transform:rotate(360deg)transform:rotate(360deg)}}
-	.flystate{width:320px;height: 300px; position: relative;margin: 35px 30px;}
-	.flystate>div{width: 120px;height: 120px;}
-	.flystate .gaodu{margin: 0 auto;position: absolute;right: 0;}
-	.flystate .sudu{margin: 0 auto;position: absolute;left: 0;}
-	.flystate .leveldu{position: absolute;bottom:0; right: 32%;}
-	.flystate img{display: inline-block; width:100%;}
-	
-	.state button{width: 220px;height: 45px;display: block;margin: 15px 75px;}
-	
-	.timer{width: 100%;text-align: center;}
-	.timer>span{font-size: 20px;margin: 3px 8px;}
-	.zqyy,.Psychological.fblcs{
-		/*display: none;*/
+	h1 {
+	  text-align: center;
+	  margin: 0;
+	}
+
+	.container {
+	  max-width: 90%;
+	  margin: 0 auto;
+	  background-color: #fff;
+	  padding: 1em 2em;
+	}
+
+	.box {
+	  max-width: 60%;
+	  max-height: 60%;
+	  padding: 10%;
+	  margin: 4em auto;
+	}
+
+	.box0 {
+	  padding: 0;
+	  margin: 0 auto;
+	}
+
+	.box1 {
+	  border: 19px dotted #c905c6;
+	  border-image-source: url(assets/border-bg.png);
+	  border-image-slice: 19;
+	}
+
+	.box2 {
+	  border-image-source: linear-gradient(10deg, #fe01f5, #2e113d);
+	  border-image-slice: 19;
+	  border-image-width: 19px;
+	}
+
+	.box3 {
+	  border: 19px dotted #c905c6;
+	  border-image-source: url(assets/border-bg.png);
+	  border-image-slice: 19 fill;
+	}
+
+	.box4 {
+	  border: 19px dotted #c905c6;
+	  border-image-source: url(assets/border-bg.png);
+	  border-image-slice: 19;
+	  border-image-width: 3;
+	}
+
+	.box5 {
+	  border: 19px dotted #c905c6;
+	  outline: 10px dotted green;
+	  border-image-source: url(assets/border-bg.png);
+	  border-image-slice: 19;
+	  border-image-width: 19px;
+	  border-image-inset: 19px;
+	}
+
+	.box6 {
+	  border: 19px dotted #c905c6;
+	  outline: 10px dotted green;
+	  border-image-source: url(assets/border-bg.png);
+	  border-image-slice: 19;
+	  border-image-width: 19px;
+	  border-image-outset: 19px;
+	}
+
+	.p {
+	  text-align: center;
+	  font-size: 13px;
 	}
 </style>
-</head>
-<body class="view">
-	<div class="timer"></div>
-	<!-- 最强鹰眼 -->
-	<div class="zqyy">	
-	  	<div class="turncircle animation " id="js-turncircle"></div>
-	  	<audio class="" id="js-circlesound"src="qgturn.wav"autoplay="autoplay"></audio>
-	  	<div>
-	  		<ul class="xuanzefx" id="js-direction">
-	  			<li class="cen left">0</li>
-	  			<li class="fl">1</li>
-	  			<li class="fl up">2</li>
-	  			<li class="fl">3</li>
-	  			<li class="cen right">4</li>
-	  			<li class="five">5</li>
-	  			<li class="down">6</li>
-	  			<li class="seven">7</li>
-	  		</ul>
-	  	</div>
-	</div>
-	<!-- 心理抗压 -->
- 	<div class="Psychological"> 
-		<div class="formula" id="js-count1">
-			<span class="exprs"></span>=<span class="answer" id="js-answer4"></span>
-		</div>
-		<div class="formula" id="js-count2">
-			<span class="exprs"></span>=<span class="answer"id="js-answer5"></span>
-		</div>
-		<div class="btn"id="js-answer">
-			<button type="button"></button>
-			<button type="button"></button>
-			<button type="button"></button>
-		</div>
-  	</div>
-	<audio class="" id="js-btnsound"src="dianjibtn.wav"autoplay="autoplay"></audio>
-	<!-- 分配力测试 -->
-	<div class="fblcs">
-		<div class="flystate"> 
-			<div class="gaodu" id="js-risedown"><img src="image/direction.jpg" alt=""></div>
-			<div class="sudu" id="js-velocity"><img src="image/direction.jpg" alt=""></div>
-			<div class="leveldu" id="js-levelness"><img src="image/direction.jpg" alt=""></div>
-		</div>
-		<div class="state" id="js-fpltest">
-			<button >加速上升右转</button>
-			<button >减速下降左转</button>
-			<button >加速上升左转</button>
-		</div>
-		<audio class="" id="js-btnsound"src="dianjibtn.wav"autoplay="autoplay"></audio>
-	</div>
 
-	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-
-			// 倒计时
-		  	timerinit(".timer","10",function(){/*alert("ok") */});
-		  	// 调用函数
-		    eyesTest(); //最强鹰眼
-		  	Psychological(); //心理抗压
-		  	flyStateTst(); //分配力测试 
+<body>
 
 
-		  	/**
-		  	 * 最强鹰眼测试 
-		  	 */
-		  	function eyesTest(){
+<div class="container">
+  <h1>CSS Border Image Examples</h1>
+  <div class="box box0">
+    <h3>Original Image</h3>
+    <img src="assets/border-bg.png" alt="original image">
+  </div>
 
-		  		var allAnswer = 0; //总共回答
-		  		var correctAnswer = 0;//回答正确
-		  		// 是否在动画中
-		  		var motion = true; 
-		  		// 声明角度数据
-		  		var angular = [0,45,90,135,180,225,270,315];
-		  		var turnDir;	// 随机方向
-		  		
+  <div class="box box1">
+    Border Image Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  </div>
 
-		  		randDirection();//初次调用方向
-		  		function randDirection(){
-		  			// 设置动画状态为true
-		  			motion = true;
-		  			// 赋值随机数
-		  			turnDir = (createRand(8)-1);
-		  			$("#js-circlesound")[0].load(); //转动音效开始
-		  			// 转动转盘
-		  			$("#js-direction").addClass("disability"); //按钮不可点击
-		  			$("#js-turncircle").addClass("animation"); // 添加动画
-	  				$("#js-turncircle").css("transform","rotate("+angular[turnDir]+"deg)"); //赋值随机数		
-		  			setTimeout(function(){
-		  				// 删除动画
-		  				$("#js-turncircle").removeClass("animation");
-		  				motion =false; //设置动画状态为false
-		  				$("#js-direction").removeClass("disability"); //按钮可点击
-		  				$("#js-circlesound")[0].pause(); //转动音效暂停
-		  			},500);
-		  		}
-		  		// 鼠标移入选择方向
-		  		$('#js-direction').on('touchend','li',function(){
-		  			// 动画状态中不可选择答案
-		  			if(motion){
-		  				return false;
-		  			}
-		  			if($(this).index()  == turnDir){
-		  				allAnswer++;// 正确
-		  				console.log($(this).index()+","+turnDir);	  			
-		  			}
-		  			correctAnswer++;
-		  			// 重新随机正确方向
-		  			randDirection();
-		  			console.log(allAnswer+","+correctAnswer);
-		  		});
-		  	};
-		  	
-			/**
-			 * 心理抗压测试函数
-			 */
-		  	function Psychological(){
-		  		
-		  		var allAnswer = 0; //总共回答
-		  		var correctAnswer = 0;//回答正确
-		  		var result=""; //合成答案
+  <div class="box box2">
+    Gradient border Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  </div>
 
-		  		addTopic(); //初次调用
-		  		/**
-		  		 * 添加题目和答案
-		  		 */
-		  		function addTopic(){
-				  	var count1 = $("#js-count1").find(".exprs"); //第一个表达式
-				  	var count2 = $("#js-count2").find(".exprs"); //第二个表达式
-				  	var typeId =["+","-","+","-"]; //运算符号
-				  	// 随机表达式
-				  	var roand1 = createRand(9)+typeId[createRand(4)-1]+createRand(9)+typeId[createRand(4)-1]+createRand(9);
-				  	var roand2 = createRand(9)+typeId[createRand(4)-1]+createRand(9)+typeId[createRand(4)-1]+createRand(9);
-				  	//打印随机表达式
-				  	count1.text(roand1);
-				  	count2.text(roand2);
-				  	//获取计算结果
-				  	var answer1 = comSubDone(count1.text());
-				  	var answer2 = comSubDone(count2.text());
-				  	/*
-				  	// 显示结果
-				    $("#js-answer4").text(answer1);
-				    $("#js-answer5").text(answer2);	
-				    */
-				    //	正确结果
-				    result = answer1+","+answer2;	  			
-				    // 错误结果
-				    var diffRand = createRandom(4,-3,3);
-				    var result1 = (answer1+diffRand[0])+","+(answer2+diffRand[1]);	  			
-				    var result2 = (answer1+diffRand[3])+","+(answer2+diffRand[2]);	  			
-		    
-				    // 打印结果到按钮
-				    var btn = $("#js-answer").find("button");
-				    var resultarr = [result,result1,result2];
-				    // 随机排序
-				    resultarr.sort(randomSort);
-				    function randomSort(a, b){
-					    return Math.random() - 0.5;
-					};
-					
-					// 添加内容
-				    $(resultarr).each(function(i,k){
-				    	btn.eq(i).html(k);
-				    });
-				    
-		    	};
-		  		/**
-			     * 计算三位运算函数
-			     * @param {Object} str 计算表达式
-			     *comSubDone('3+2+1')
-			     */
-			    function comSubDone(str){
-			    	var arr = str.split("");
-			    	var num = 0;
-			    	if(arr[1] == '+'){
-			    		num = arr[0] - arr[2];
-			    	}else{
-			    		num = parseInt(arr[0]) + parseInt(arr[2]);
-			    	};
-			    	if(arr[3] == '+'){
-			    		num = num - arr[4];
-			    	}else{
-			    		num = parseInt(num) + parseInt(arr[4]);
-			    	}
-			    	return num;
-		  		};
-		  		// 鼠标移入选择事件			
-		  		$('#js-answer').on('touchend','button',function(){
-		  			$("#js-btnsound")[0].load(); //按钮点击音效		    
-		  			$("#js-answer").find("button").attr("disabled",true); //按钮禁用
-		  			// 如果选择正确答案
-		  			if ($(this).text() == result) {
-		  				allAnswer++;
-		  			};
-		  			correctAnswer++; // 所有的题目数
-		  			addTopic();
-		  			setTimeout(function(){
-			  			$("#js-answer").find("button").attr("disabled",false); //按钮可用
-			  		},200);
-		  			console.log(allAnswer+","+correctAnswer);
-		  		});
-		  	};
-			
-			/**
-			 *分配力测试 
-			 */
-		  	function flyStateTst(){
+  <div class="box">
+    <h3>Original Image Filled</h3>
+    <img src="https://dl.dropboxusercontent.com/u/32494584/border-fill.png" alt="original image filled">
+  </div>
 
-		  		var allAnswer = 0; //总共回答
-		  		var correctAnswer = 0;//回答正确
+  <div class="box box3">
+    Border Image with the fill keyword.
+  </div>
 
-		  		var random; //随机数值
-		  		var arr = [
-		  			[0,120,270],[52,168,45],[135,180,90],[200,80,300],[72,186,320],
-		  			[168,118,132],[182,158,135],[189,186,118],[110,119,120],[142,230,350],
-		  			[187,136,158],[139,151,90],[110,156,270],[45,68,90],[38,48,62],
-		  			[45,68,42],[22,36,42],[50,64,72],[20,68,90],[45,56,90],
-		  			[45,68,82],[20,28,60],[30,51,64],[45,38,90],[20,68,90],
-		  			[45,56,82],[46,52,71],[20,68,42],[45,68,42],[45,38,42],
-		  		];
-		  		randstate();//初次调用
-		  		function randstate(){
-		  			// 随机数赋值
-		  			random = (createRand(30)-1);
-		  			$("#js-risedown").css('transform',"rotate("+arr[random][0]+360+"deg)");
-		  			$("#js-velocity").css('transform',"rotate("+arr[random][1]+360+"deg)");
-		  			$("#js-levelness").css('transform',"rotate("+arr[random][2]+360+"deg)");
-		  			console.log(random);
-		  		};
-		  		// 鼠标移入选择状态
-		  		$("#js-fpltest").on("touchend",'button',function(){
-		  			$("#js-btnsound")[0].load(); //按钮点击音效		    
-		  			$("#js-fpltest").find("button").attr("disabled",true); //按钮禁用
-		  			var index = $(this).index();  			
-		  			if (random<10 && index == "0") {
-	  					// 正确
-	  					correctAnswer++;
-		  			}else if (random >= 10 && random < 20 && index == "1"){
-	  					// 正确
-	  					correctAnswer++;
-		  			}else if (random >= 20 && random<30 && index == "2") {
-	  					// 正确
-	  					correctAnswer++;
-	  				}
-		  			allAnswer++;
-		  			randstate();
-		  			console.log(allAnswer+","+correctAnswer);
-			  		setTimeout(function(){
-			  			$("#js-fpltest").find("button").attr("disabled",false); //按钮可用
-			  		},200);
-		  		});
+  <div class="box box4">
+    Border Image Width
+  </div>
 
-		  	};
+  <div class="box box5">
+    Border Image Inset
+  </div>
 
-		  	/**
-		  	 *获取随机数
-		  	 */
-	  		function createRand(max){
-				var ranNum=Math.ceil(Math.random()*max);
-				return ranNum;
-	  		};
-		   	/**
-		   	 * createRandom() 获取不相同的随机数
-		   	 * @param {Object} num 要产生多少个随机数
-		   	 * @param {Object} from 产生随机数的最小值
-		   	 * @param {Object} to 产生随机数的最大值
-		   	 *createRandom(10,0,50)生成10组0到50不重复的随机数
-		   	 */
-		    function createRandom(num , from , to)
-		    {
-		        var arr=[];
-		        var json={};
-		        while(arr.length<num)
-		        {
-		            //产生单个随机数
-		            var ranNum=Math.ceil(Math.random()*(to-from))+from;
-		            //通过判断json对象的索引值是否存在 来标记 是否重复
-		            if(!json[ranNum])
-		            {
-		                json[ranNum]=1;
-		                arr.push(ranNum);
-		            }
-		             
-		        }
-		        return arr;
-		    };
-
-			
-			/**
-			 * 设置倒计时(60秒内)
-			 * @param {Object} dom 倒计时盒子
-			 * @param {Object} time 倒计时时间数(秒)
-			 * @param {Object} callback 执行回调
-			 */
-			function timerinit(dom,time,callback){
-				var arTi = time.split("");tenSeBit
-				var tenSeBit = arTi[0];	//倒计时十秒位
-				var seconds =arTi[1]; //倒计时秒位
-				var html = "<span>0</span><span>0</span>:<span class='shiwei'>"+tenSeBit+"</span><span class='seconds'>"+seconds+"</span>";
-				$(dom).html(html);
-				var timer = setInterval(function(){
-					seconds--;
-					time--;
-					if (seconds < 0) {
-						tenSeBit-- ;
-						seconds = 9;
-					};
-					$(dom).find(".shiwei").text(tenSeBit);
-					$(dom).find(".seconds").text(seconds);
-					if (time <= 0) {
-						clearInterval(timer);//清除定时器
-						if (typeof callback == 'function') {
-							callback();
-						};
-					};				
-				},1000);
-			};
-
-		})
-
-	</script>
+  <div class="box box6">
+    Border Image Outset
+  </div>
+  
+  <p class="p">Demo by Maria Antonietta Perna. <a href="http://www.sitepoint.com/decorating-the-web-with-css-border-images" target="_blank">See article</a>.</p>
+</div>
 </body>
 </html>

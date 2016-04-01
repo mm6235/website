@@ -7,14 +7,14 @@
 	<meta name="description" content="">
 	<link rel="shortcut icon" href="http://s01.mifile.cn/favicon.ico" type="image/x-icon" />
 	<!--[if lt IE 9]>
-		<script type="text/javascript"src="/tuobar/website/assets/plugins/html5shiv/html5shiv.js"></script>
+		<script type="text/javascript"src="/website/assets/plugins/html5shiv/html5shiv.js"></script>
 	<![endif] -->
 	<!-- bootstrap css资源 -->
-	<link rel="stylesheet" type="text/css" href="/tuobar/website/assets/plugins/bootstrap-3.3.5/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/website/assets/plugins/bootstrap-3.3.5/dist/css/bootstrap.min.css">
 	<!-- amazeui css资源 -->
-	<link rel="stylesheet" type="text/css" href="/tuobar/website/assets/plugins/amazeui/css/amazeui.min.css">
+	<link rel="stylesheet" type="text/css" href="/website/assets/plugins/amazeui/css/amazeui.min.css">
 	<!-- 主资源css -->
-	<link rel="stylesheet" type="text/css" href="/tuobar/website/assets/mi/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/website/assets/mi/css/style.css">
 </head>
 <body>
 	<!-- 头部开始 -->
@@ -393,8 +393,8 @@
 		<article class="m-main">1</article>
 		<article class="m-main">1</article>
 	</section>
-	<script type="text/javascript" src="/tuobar/website/assets/plugins/seajs/sea.js"></script>
-	<script type="text/javascript" src="/tuobar/website/assets/mi/js/config.js"></script>
+	<script type="text/javascript" src="/website/assets/plugins/seajs/sea.js"></script>
+	<script type="text/javascript" src="/website/assets/mi/js/config.js"></script>
 	<script type="text/javascript">
 		seajs.use("js/index");
 	</script>

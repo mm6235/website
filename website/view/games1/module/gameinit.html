@@ -1,0 +1,23 @@
+<!--
+	作者：914230482@qq.com
+	时间：2015-12-28
+	描述：游戏封面
+-->
+<div class="m-gamesfengmian animated" id="games-fengmian">
+	<div class="p1 animated" data-am-type="bounceInLeft" data-am-time=0><img src="src/images/fm-6.png"/></div>
+	<div class="p2 animated" data-am-type="bounceInRight" data-am-time=200><img src="src/images/fm-5.png"/></div>
+	<div class="p3 animated" data-am-type="bounceInLeft" data-am-time=400><img src="src/images/fm-3.png"/></div>
+	<div class="p4 animated" data-am-type="bounceInRight" data-am-time=600><img src="src/images/fm-2.png"/></div>
+	<div class="p5 animated" data-am-type="bounceInRight" data-am-time=800><img src="src/images/fm-7.png"/></div>
+	<div class="p6 animated" data-am-type="bounceInBottom" data-am-time=1000 id="games-plays"><img src="src/images/fm-8.png"/></div>
+</div>
+<script type="text/javascript">
+	seajs.use('TGM',function(TGM){
+		$('#games-plays').on('click',function(){
+			console.log('点击开始游戏');
+			$('#games-fengmian').addClass('zoomOutUp');
+			TGM.gameStart();
+		})
+	});
+</script>
+

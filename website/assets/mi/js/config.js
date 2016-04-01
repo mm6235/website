@@ -5,8 +5,8 @@ seajs.config({
 	base:"../assets/",
 	// 资源路径配置
 	paths:{
-		"plugins":"/tuobar/website/assets/plugins/",
-		"js":"/tuobar/website/assets/mi/js/",
+		"plugins":"/website/assets/plugins/",
+		"js":"/website/assets/mi/js/",
 	},
 	// 文件别名，方便加载使用
 	alias:{

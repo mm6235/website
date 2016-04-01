@@ -11,12 +11,15 @@
 </head>
 <body >
 	<div class="pg-main" id="js-main">
-		<section class="pg-item ">
-			首页
+		<section class="pg-item active">
+			<div class="avindex"style="margin:45% auto;text-align:center;">
+			<p>首页</p>
+			<a class="js-pagecut"data-link="1"style="height: 25px; display:block;" href="javascript:void(0)">下一页</a>				
+			</div>
 		</section>
 		<!-- 最强鹰眼 -->
 		<!-- 转场 -->
-		<section class="gz-compressive pg-item active">
+		<section class="gz-compressive pg-item ">
 			<h2 class="title"><img class="slogan" src="img/chnlz.png"><img class="slogan genre"src="img/zqyinyan.png"></h2>
 			<div class="gz-tbg"><img src="img/zhuangchang_04.png"></div>
 			<div class="gz-con">
