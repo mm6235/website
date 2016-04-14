@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>404页面出错了</title>
+	<style type="text/css">
+	/*charset 'utf-8';*/
+		/*全局样式*/
+		html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{padding: 0;margin: 0;}
+		/*html5*/
+		article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+		html,body{position:relative;font-size: 14px;font-weight: normal;color: #666;font-family:Arial,'Microsoft YaHei','sans-serif','微软雅黑';}
+		a,a:hover,a:link,a:visited{text-decoration: none;}
+		img{border:0;}
+		body{background-color: #FEFEFE;}
+
+
+
+		/***	  	***\
+		  移动端404页面
+		\***  		***/
+		.m-error{display:block ; position: relative; width: 100%; margin-top: 25%;}
+		.m-error .title{position: relative; width: 100%; padding-top: 4rem; text-align: center; -webkit-animation: headline 0.6s ease-out; -o-animation: headline 0.6s ease-out; animation: headline 0.6s ease-out; }
+		.m-error .back{position: relative; z-index: 7; display: block; width: 19rem; height: 4rem; line-height: 4rem; margin:36px auto 12px; border: 1px solid  #f34253; border-radius: 42px; text-align: center; color: #f34253; font-size: 2.2rem;  -webkit-animation: aircraft 1s ease-out 0.3s; -o-animation: aircraft 1s ease-out 0.3s; animation: aircraft 1s ease-out 0.3s;}
+		.m-error .back:active{background-color: #DAD4D4;}
+		.m-aircraft{position: relative;}
+		.m-aircraft .lfly{position: absolute; left: 0; z-index: 9; margin-left: 21%; margin-top: 2.5rem; width: 18rem;-webkit-animation: aircraft 1.5s ease-out 0.3s; -o-animation: aircraft 1.5s ease-out 0.3s; animation: aircraft 1.5s ease-out 0.3s;}
+		.m-aircraft .rfly{position: absolute; right: 0; z-index: 8; width: 10.2rem; margin-right: 7rem;-webkit-animation: helicopter 2s ease-out; -o-animation: helicopter 2s ease-out; animation: helicopter 2s ease-out;}
+		.m-error .bg{position: relative; z-index: 6; height: 35.6rem; padding-top: 7%; margin: 0 auto; -webkit-animation: bganimation 1s ease-out; -o-animation: bganimation 1s ease-out; animation:bganimation 1s ease-out;}
+		.m-error img{width: 100%;}
+		/*404标题动画*/
+		@-webkit-keyframes headline{
+			0%{left: -100%;opacity: 0.5;}
+			100%{left: 0;opacity: 1;}
+		}
+		@-o-keyframes headline{
+			0%{left: -100%;opacity: 0.5;}
+			100%{left: 0;opacity: 1;}
+		}
+		@keyframes headline{
+			0%{left: -100%;opacity: 0.5;}
+			100%{left: 0;opacity: 1;}
+		}
+		/*飞机动画*/
+		@-webkit-keyframes aircraft{
+			0%{left: -30%; top: -150px; -webkit-transform: scale(0.3);}
+			100%{right: 0; top: 0; -webkit-transform: scale(1);}
+		}
+		@-o-keyframes aircraft{
+			0%{left: -30%; top: -150px; -o-transform: scale(0.3);}
+			100%{right: 0; top: 0; -o-transform: scale(1);}
+		}
+		@keyframes aircraft{
+			0%{left: -30%; top: -150px; transform: scale(0.3);}
+			100%{right: 0; top: 0; transform: scale(1);}
+		}
+		/*小直升机动画*/
+		@-webkit-keyframes helicopter{
+			0%{right: 100%; top: -50px; -webkit-transform: scale(0.5);}
+			100%{right: 0; top: 0; -webkit-transform: scale(1);}
+		}
+		@-o-keyframes helicopter{
+			0%{right: 100%; top: -50px; -o-transform: scale(0.5);}
+			100%{right: 0; top: 0; -o-transform: scale(1);}
+		}
+		@keyframes helicopter{
+			0%{right: 100%; top: -50px; transform: scale(0.5);}
+			100%{right: 0; top: 0; transform: scale(1);}
+		}
+		.nav{padding: 5px 0; position: fixed; width: 100%;  left: 0px; top: 0px; background-color: #f65d5b;}
+		.nav .title{padding: 9px 0 3px; }
+		.nav .title img{width: 310px;}
+		
+		.nht_box{width: 1200px; margin: 0 auto;}
+		.p-error{position: relative; height: 750px; width: 100%; text-align: center;margin-top: 56px; }
+		.p-error .title{position: relative; width: 100%; margin-top: 15%;  -webkit-animation: titleline 0.6s ease-out; -o-animation: titleline 0.6s ease-out; animation: titleline 0.6s ease-out;}
+		.p-error .aircraft{margin-top: 60px;}
+		.p-error .aircraft .fly{position: absolute; z-index: 8; right: 0; top: 9%; margin-right: 14%;-webkit-animation: flyanimation 1.5s ease-out; -o-animation: flyanimation 1.5s ease-out; animation:flyanimation 1.5s ease-out;}
+		.p-error .aircraft .back{position: relative; z-index: 7; display: block; width: 152px; height: 36px; line-height: 36px; margin: 0 auto; border-radius: 20px; color:#FFF; font-size: 18px; background-color: #f34253; -webkit-animation: titleline 0.6s ease-out; -o-animation: titleline 0.6s ease-out; animation: titleline 0.6s ease-out; -webkit-transition:background 0.3s;-o-transition:background 0.3s;transition:background 0.3s;}
+		.p-error .aircraft .back:hover{background-color: #C71627;}
+		.p-error .aircraft .bg{position: relative; width: 100%; z-index:6; height: 491px; margin: -12px auto 0;  -webkit-animation: bganimation 1.5s ease-out; -o-animation: bganimation 1.5s ease-out; animation:bganimation 1.5s ease-out;}
+		.p-error .aircraft .bg img{width: 100%;}
+		/*404标题动画*/
+		@-webkit-keyframes titleline{
+			0%{right: 22%; top: -20%; -webkit-transform: scale(0.2);}
+			100%{right: 0; top: 0; -webkit-transform: scale(1);}
+		}
+		@-o-keyframes titleline{
+			0%{right: 22%; top: -20%; -o-transform: scale(0.2);}
+			100%{right: 0; top: 0; -o-transform: scale(1);}
+		}
+		@keyframes titleline{
+			0%{right: 22%; top: -20%; transform: scale(0.2);}
+			100%{right: 0; top: 0; transform: scale(1);}
+		}
+		/*飞机动画*/
+		@-webkit-keyframes flyanimation{
+			0%{right: -20%; top: 42%;  -webkit-transform: scale(0.5);}
+			100%{right: 0; top: 9%; -webkit-transform: scale(1);}
+		}
+		@-o-keyframes flyanimation{
+			0%{right: -20%; top: 42%;  -o-transform: scale(0.5);}
+			100%{right: 0; top: 9%; -o-transform: scale(1);}
+		}
+		@keyframes flyanimation{
+			0%{right: -20%; top: 42%; transform: scale(0.5);}
+			100%{right: 0; top: 9%; transform: scale(1);}
+		}
+		/*背景缩放动画*/
+		@-webkit-keyframes bganimation{
+			0%{width: 0;  -webkit-transform: scale(0.8);}
+			80%{margin-top: -60px;}
+			100%{width: 100%; -webkit-transform: scale(1);}
+		}
+		@-o-keyframes bganimation{
+			0%{width: 0;   -o-transform: scale(0.8);}
+			80%{margin-top: -60px;}
+			100%{width: 100%; -o-transform: scale(1);}
+		}
+		@keyframes bganimation{
+			0%{width: 0;  transform: scale(0.8);}
+			80%{margin-top: -60px;}
+			100%{width: 100%; transform: scale(1);}
+		}
+		.pb{display: none;}
+		.mb{display: block;}
+	</style>
+</head>
+<body>
+	<div class="pb nht_box">
+		<div class="p-error">
+			<h2 class="title"><img src="assets/404/40401.png" alt=""></h2>
+			<div class="aircraft">
+				<div class="fly"><img src="assets/404/40402.png" alt=""></div>
+				<a href="http://www.tuobar.com/" class="back">返回首页</a>
+				<div class="bg">
+					<img src="assets/404/40403.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mb">
+		<nav class="nav">
+		  	<h2 class="title"><a href="http://fly.tuobar.com/"><img src="http://fly.tuobar.com/template/cis_app/touch/style/logo.png"></a></h2>
+		</nav>
+		<div class="m-error">
+			<h1 class="title"><img src="assets/404/404.png"></h1>
+			<a class="back" href="http://fly.tuobar.com/">返回首页</a>
+			<div class="m-aircraft">
+				<div class="lfly"><img src="assets/404/404-2.png" alt=""></div>
+				<div class="rfly"><img src="assets/404/404-1.png" alt=""></div>
+			</div>
+			<div class="bg"><img src="assets/404/404_bg.png" alt=""></div>
+		</div>
+	</div>	
+</body>
+</html>
