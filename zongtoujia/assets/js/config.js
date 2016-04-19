@@ -2,7 +2,7 @@
 seajs.config({
 	charset: 'utf-8',
 	// 根目录
-	base: '/zongtoujia/',
+	base: '/website/zongtoujia/',
 
 	// 路径配置
 	paths: {
