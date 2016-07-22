@@ -190,7 +190,6 @@ define(function(require, exports, module){
 					return false;
 				}
 				$(this).next("span").text('');
-
 				formState = state;
 			});
 			return  formState;
