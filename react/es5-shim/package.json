@@ -33,7 +33,7 @@
     "jscs": "jscs tests/helpers/*.js tests/spec/*.js es5-shim.js es5-sham.js"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
+    "eslint": "^4.8.2",
     "@ljharb/eslint-config": "^1.6.1",
     "jasmine-node": "^1.14.5",
     "jscs": "^2.9.0",
